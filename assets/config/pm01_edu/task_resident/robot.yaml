@@ -1,0 +1,35 @@
+# ----------------------- Resident Tasks ----------------------- #
+tasks:
+  - task: input_command_arbiter
+    cpu: 1
+    priority: 10
+    period: 0.002
+    runner:
+      - name: input_command_arbiter_runner
+        enabled: true
+
+  - task: whole_body_estimate
+    cpu: 1
+    priority: 10
+    period: 0.002
+    runner:
+      - name: whole_body_estimate_runner
+        enabled: true
+
+  - task: imu
+    cpu: 1
+    priority: 10
+    period: 0.002
+    runner:
+      - name: imu_runner
+        enabled: true
+
+  - task: motor
+    cpu: 1
+    priority: 90
+    period: 0.002
+    runner:
+      - name: joint_motor_transform_runner
+        enabled: true
+      - name: motor_runner
+        enabled: true

@@ -1,0 +1,61 @@
+# ----------------------- Motion Tasks ----------------------- #
+cpu:
+  number: 3
+  priority: 10
+
+tasks:
+  - motion: idle
+    period: 0.002
+    runner:
+      - name: idle_runner
+        enabled: true
+    manual_transition:
+      - passive
+    auto_transition: passive
+    key: [LB, START]
+
+  - motion: passive
+    period: 0.002
+    runner:
+      - name: passive_runner
+        enabled: true
+    manual_transition:
+      - idle
+      - pd_stand
+    key: [LB, RB]
+
+  - motion: pd_stand
+    period: 0.002
+    runner:
+      - name: pd_stand_runner
+        enabled: true
+        param_tag: pd_stand
+    manual_transition:
+      - passive
+      - walk
+      - dance
+    key: [LB, A]
+
+  - motion: walk
+    period: 0.01
+    runner:
+      - name: rl_walking_example_runner
+        enabled: true
+        param_tag: rl_walking_example
+    manual_transition:
+      - passive
+      - pd_stand
+      - dance
+    key: [LB, B]
+
+  - motion: dance
+    period: 0.02
+    runner:
+      - name: rl_dance_example_runner
+        enabled: true
+    manual_transition:
+      - passive
+      - pd_stand
+      - walk
+    auto_transition: walk
+    key: [LB, CROSS_X_DOWN]

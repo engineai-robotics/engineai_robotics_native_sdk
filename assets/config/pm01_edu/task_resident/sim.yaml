@@ -1,0 +1,33 @@
+# ----------------------- Resident Tasks ----------------------- #
+tasks:
+  - task: input_command_arbiter
+    cpu: 1
+    priority: 10
+    period: 0.002
+    runner:
+      - name: input_command_arbiter_runner
+        enabled: true
+
+  - task: whole_body_estimate
+    cpu: 1
+    priority: 10
+    period: 0.002
+    runner:
+      - name: whole_body_estimate_runner
+        enabled: true
+
+  - task: sim_subscribe
+    cpu: 1
+    priority: 10
+    period: 0
+    runner:
+      - name: sim_subscribe_runner
+        enabled: true
+
+  - task: sim_publish
+    cpu: 1
+    priority: 10
+    period: 0.002
+    runner:
+      - name: sim_publish_runner
+        enabled: true

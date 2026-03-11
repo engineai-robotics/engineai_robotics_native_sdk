@@ -1,0 +1,10 @@
+.vscode/
+*.cursorrules
+.idea/
+.cache/
+*.deb
+build/
+rosbag2_*/
+__pycache__/
+*.pyc
+.ace-tool/

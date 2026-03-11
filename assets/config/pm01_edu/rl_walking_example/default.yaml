@@ -1,0 +1,80 @@
+# mlp net parameters
+policy_file: "rl_walking_example/policies/251009_221907_41000.mnn"
+num_observations: 72
+active_joint_names:
+  [
+    "J00_HIP_PITCH_L",
+    "J01_HIP_ROLL_L",
+    "J02_HIP_YAW_L",
+    "J03_KNEE_PITCH_L",
+    "J04_ANKLE_PITCH_L",
+    "J05_ANKLE_ROLL_L",
+    "J06_HIP_PITCH_R",
+    "J07_HIP_ROLL_R",
+    "J08_HIP_YAW_R",
+    "J09_KNEE_PITCH_R",
+    "J10_ANKLE_PITCH_R",
+    "J11_ANKLE_ROLL_R",
+    "J13_SHOULDER_PITCH_L",
+    "J14_SHOULDER_ROLL_L",
+    "J15_SHOULDER_YAW_L",
+    "J16_ELBOW_PITCH_L",
+    "J17_ELBOW_YAW_L",
+    "J18_SHOULDER_PITCH_R",
+    "J19_SHOULDER_ROLL_R",
+    "J20_SHOULDER_YAW_R",
+    "J21_ELBOW_PITCH_R",
+    "J22_ELBOW_YAW_R",
+  ]
+num_include_obs_steps: 15
+# observation parameters
+observation_scale_linear_vel: 2.0
+observation_scale_angular_vel: 1.0
+observation_scale_dof_pos: 1.0
+observation_scale_dof_vel: 0.05
+observation_scale_quat: 1.0
+observation_clip: 100.0
+
+# joint control parameters
+action_clip: 100.0
+default_joint_q:
+  - [-0.06, 0.0, 0.0, 0.12, -0.06, 0.0]
+  - [-0.06, 0.0, 0.0, 0.12, -0.06, 0.0]
+  - [0.0]
+  - [0.0, 0.15, 0.0, -0.25, 0.0]
+  - [0.0, -0.15, 0.0, -0.25, 0.0]
+  - [0.0]
+
+joint_kp:
+  - [110, 70, 70, 110, 30, 30]
+  - [110, 70, 70, 110, 30, 30]
+  - [80]
+  - [30, 30, 30, 30, 30]
+  - [30, 30, 30, 30, 30]
+  - [50]
+
+joint_kd:
+  - [5.0, 3.0, 3.0, 5.0, 0.3, 0.3]
+  - [5.0, 3.0, 3.0, 5.0, 0.3, 0.3]
+  - [5.0]
+  - [0.3, 0.3, 0.3, 0.3, 0.3]
+  - [0.3, 0.3, 0.3, 0.3, 0.3]
+  - [0.3]
+
+action_scale:
+  - [0.5, 0.2, 0.2, 0.5, 0.5, 0.2]
+  - [0.5, 0.2, 0.2, 0.5, 0.5, 0.2]
+  - [0.2, 0.2, 0.05, 0.2, 0.05]
+  - [0.2, 0.2, 0.05, 0.2, 0.05]
+
+control_dt: 0.01
+
+# sim to real fine tune parameters
+enable_remote_command_lpf: true
+remote_command_sampling_frequency: 40.0
+remote_command_cut_off_frequency: 0.1
+
+command_scale_pos: [1.0, 0.4, 1.0]
+command_scale_neg: [1.0, 0.4, 1.0]
+
+imu_install_bias: [0, 0.0, 0]

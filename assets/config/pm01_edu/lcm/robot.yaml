@@ -1,0 +1,12 @@
+# Communication type only support `multicast` or `unicast`.
+# `multicast` allows data to be transmitted between a sender and multiple receivers,
+# and the maximum number of receivers is determined by `ttl`.
+# `unicast` allows data to be transmitted between a sender and a single receiver.
+multicast: true
+
+# Set ip address and port carefully. It is strongly recommended to set as `239.255.76.67:7667`,
+# which can be set from `224.0.0.0` to `239.255.255.255`
+ip_port: 239.255.76.67:7667
+
+# Time to live, only valid for `multicast` type
+ttl: 1

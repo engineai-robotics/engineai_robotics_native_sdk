@@ -1,0 +1,79 @@
+active_mode: sim
+
+# ------------------------------------------------------------------------------------------------ #
+
+# 设置配置文件映射：
+#  mode: 由 active_mode 指定的模式配置文件
+
+# 列表中的每个条目是一个字典，包含以下键：
+#   tag:            配置文件的标识
+#   scope:          配置文件的路径 (⚠️ 相对于 product目录的路径)
+
+# ------------------------------------------------------------------------------------------------ #
+
+mode:
+  robot:
+    - tag: resident_task
+      scope: task_resident/robot
+    - tag: motion_task
+      scope: task_motion/default
+    - tag: global_options
+      scope: global_options/release
+    - tag: lcm
+      scope: lcm/robot
+    - tag: google_logger
+      scope: google_logger/default
+    - tag: motor
+      scope: motor/default
+    - tag: model
+      scope: model/default
+    - tag: base_state_estimator
+      scope: base_state_estimator/default
+    - tag: motion_state_estimator
+      scope: motion_state_estimator/default
+    - tag: parallel_ankle
+      scope: parallel_ankle/default
+    - tag: joint_motor_transform
+      scope: joint_motor_transform_runner/default
+    - tag: stand_up
+      scope: multiple_motion_plan/default_stand_up
+    - tag: passive
+      scope: passive/default
+    - tag: pd_stand
+      scope: pd_stand/robot
+    - tag: rl_walking_example
+      scope: rl_walking_example/default
+    - tag: rl_dance_example
+      scope: rl_dance_example/default
+
+  sim:
+    - tag: resident_task
+      scope: task_resident/sim
+    - tag: motion_task
+      scope: task_motion/default
+    - tag: global_options
+      scope: global_options/release
+    - tag: lcm
+      scope: lcm/default
+    - tag: google_logger
+      scope: google_logger/default
+    - tag: motor
+      scope: motor/default
+    - tag: model
+      scope: model/default
+    - tag: base_state_estimator
+      scope: base_state_estimator/default
+    - tag: motion_state_estimator
+      scope: motion_state_estimator/default
+    - tag: parallel_ankle
+      scope: parallel_ankle/default
+    - tag: joint_motor_transform
+      scope: joint_motor_transform_runner/default
+    - tag: passive
+      scope: passive/default
+    - tag: pd_stand
+      scope: pd_stand/default
+    - tag: rl_walking_example
+      scope: rl_walking_example/default
+    - tag: rl_dance_example
+      scope: rl_dance_example/default

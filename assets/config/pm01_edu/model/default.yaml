@@ -1,0 +1,70 @@
+urdf: serial_pm01_edu.urdf
+xml: pm01_edu.xml
+
+# Sets floating base type: fixed, free_by_quaternion, free_by_euler_zyx, planner
+floating_base_type: free_by_quaternion
+verbose: false
+
+limbs:
+  - name: left_leg
+    joints: [J00_HIP_PITCH_L, J01_HIP_ROLL_L, J02_HIP_YAW_L, J03_KNEE_PITCH_L, J04_ANKLE_PITCH_L, J05_ANKLE_ROLL_L]
+  - name: right_leg
+    joints: [J06_HIP_PITCH_R, J07_HIP_ROLL_R, J08_HIP_YAW_R, J09_KNEE_PITCH_R, J10_ANKLE_PITCH_R, J11_ANKLE_ROLL_R]
+  - name: waist
+    joints: [J12_WAIST_YAW]
+  - name: left_arm
+    joints: [J13_SHOULDER_PITCH_L, J14_SHOULDER_ROLL_L, J15_SHOULDER_YAW_L, J16_ELBOW_PITCH_L, J17_ELBOW_YAW_L]
+  - name: right_arm
+    joints: [J18_SHOULDER_PITCH_R, J19_SHOULDER_ROLL_R, J20_SHOULDER_YAW_R, J21_ELBOW_PITCH_R, J22_ELBOW_YAW_R]
+  - name: head
+    joints: [J23_HEAD_YAW]
+
+parallel_groups:
+  - name: left_ankle
+    joints: [J04_ANKLE_PITCH_L, J05_ANKLE_ROLL_L]
+  - name: right_ankle
+    joints: [J10_ANKLE_PITCH_R, J11_ANKLE_ROLL_R]
+
+# Note each limbs must have a corresponding end-effector frame
+end_effector_frames: [LINK_FOOT_L, LINK_FOOT_R, LINK_TORSO_YAW, LINK_ELBOW_END_L, LINK_ELBOW_END_R, LINK_HEAD_YAW]
+
+# TODO(qsy): Add more contact information
+contact:
+  - name: left_foot_contact
+    belonging: left_leg
+    type: rectangular
+    frame: LINK_FOOT_L
+    vertices_offset:
+      - [0.126295, 0.053555, 0]
+      - [0.126295, -0.053555, 0]
+      - [-0.126295, -0.053555, 0]
+      - [-0.126295, 0.053555, 0]
+    friction: 0.8
+    confidence_interval: 0.2
+  - name: right_foot_contact
+    belonging: right_leg
+    type: rectangular
+    frame: LINK_FOOT_R
+    vertices_offset:
+      - [0.126295, 0.053555, 0]
+      - [0.126295, -0.053555, 0]
+      - [-0.126295, -0.053555, 0]
+      - [-0.126295, 0.053555, 0]
+    friction: 0.8
+    confidence_interval: 0.2
+  - name: left_elbow_end_contact
+    belonging: left_arm
+    type: point
+    frame: LINK_ELBOW_END_L
+    vertices_offset:
+      - [0, 0, 0]
+    friction: 0.8
+    confidence_interval: 0.2
+  - name: right_elbow_end_contact
+    belonging: right_arm
+    type: point
+    frame: LINK_ELBOW_END_R
+    vertices_offset:
+      - [0, 0, 0]
+    friction: 0.8
+    confidence_interval: 0.2

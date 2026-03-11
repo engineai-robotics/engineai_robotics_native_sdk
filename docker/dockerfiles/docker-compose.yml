@@ -1,0 +1,39 @@
+services:
+  ros_dev:
+    container_name: ${CONTAINER_NAME}
+    build:
+      context: .
+      args:
+        SOURCE_IMAGE: ${SOURCE_IMAGE}
+        USER_NAME: ${USER_NAME}
+        USER_ID: ${USER_ID}
+        GROUP_ID: ${GROUP_ID}
+        USER_HOME: ${USER_HOME}
+        PROJECT_NAME: ${PROJECT_NAME}
+    image: ${LOCAL_IMAGE_NAME}:${LOCAL_IMAGE_TAG}
+    working_dir: ${WORKSPACE_DIR}
+    privileged: true
+    network_mode: host
+    volumes:
+      - "/home/${USER_NAME}/.Xauthority:/home/${USER_NAME}/.Xauthority"
+      - "/home/${USER_NAME}/.ssh:/home/${USER_NAME}/.ssh"
+      - "/home/${USER_NAME}/.gitconfig:/home/${USER_NAME}/.gitconfig"
+      - "/etc/localtime:/etc/localtime"
+      - "/var/cache/ccache:/var/cache/ccache"
+      - "/tmp/:/tmp/"
+      - "/dev/snd:/dev/snd"
+      - "/dev/shm:/dev/shm"
+      - "/dev/bus/usb:/dev/bus/usb"
+      - "/etc/machine-id:/etc/machine-id"
+      - "/var/lib/dbus:/var/lib/dbus"
+      - "${WORKSPACE_DIR}:${WORKSPACE_DIR}"
+      - "/dev:/dev"
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XMODIFIERS=${XMODIFIERS}
+      - XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}
+      - QT_IM_MODULE=${QT_IM_MODULE}
+      - GTK_IM_MODULE=${GTK_IM_MODULE}
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    extra_hosts:
+      - "${HOSTNAME}:127.0.0.1"
