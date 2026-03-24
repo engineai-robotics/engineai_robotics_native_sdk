@@ -3,7 +3,7 @@
 ####### Any changes to this file will be overwritten by the next CMake run ####
 ####### The input file was EngineAICoreConfig.cmake.in                            ########
 
-get_filename_component(PACKAGE_PREFIX_DIR "${CMAKE_CURRENT_LIST_DIR}/../../../" ABSOLUTE)
+get_filename_component(PACKAGE_PREFIX_DIR "${CMAKE_CURRENT_LIST_DIR}/../../" ABSOLUTE)
 
 macro(set_and_check _var _file)
   set(${_var} "${_file}")
@@ -30,8 +30,8 @@ set(EngineAICore_VERSION )
 
 # 使用 PACKAGE_INIT 提供的宏进行路径重定位
 # PACKAGE_PREFIX_DIR 由 PACKAGE_INIT 自动计算为安装前缀
-set_and_check(EngineAICore_LIB_DIR "${PACKAGE_PREFIX_DIR}/native_sdk/core/lib")
-set_and_check(EngineAICore_INCLUDE_DIR "${PACKAGE_PREFIX_DIR}/native_sdk/core/include")
+set_and_check(EngineAICore_LIB_DIR "${PACKAGE_PREFIX_DIR}/core/lib")
+set_and_check(EngineAICore_INCLUDE_DIR "${PACKAGE_PREFIX_DIR}/core/include")
 
 # 计算 SDK 根目录
 get_filename_component(EngineAICore_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
