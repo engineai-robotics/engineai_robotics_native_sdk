@@ -125,16 +125,6 @@ set_target_properties(EngineAICore::src_data PROPERTIES
 list(APPEND _IMPORT_CHECK_TARGETS EngineAICore::src_data )
 list(APPEND _IMPORT_CHECK_FILES_FOR_EngineAICore::src_data "${_IMPORT_PREFIX}/core/lib/libsrc_data.so" )
 
-# Import target "EngineAICore::src_hardware_gamepad" for configuration "Release"
-set_property(TARGET EngineAICore::src_hardware_gamepad APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-set_target_properties(EngineAICore::src_hardware_gamepad PROPERTIES
-  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/core/lib/libsrc_hardware_gamepad.so"
-  IMPORTED_SONAME_RELEASE "libsrc_hardware_gamepad.so"
-  )
-
-list(APPEND _IMPORT_CHECK_TARGETS EngineAICore::src_hardware_gamepad )
-list(APPEND _IMPORT_CHECK_FILES_FOR_EngineAICore::src_hardware_gamepad "${_IMPORT_PREFIX}/core/lib/libsrc_hardware_gamepad.so" )
-
 # Import target "EngineAICore::src_hardware_imu" for configuration "Release"
 set_property(TARGET EngineAICore::src_hardware_imu APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(EngineAICore::src_hardware_imu PROPERTIES
@@ -174,16 +164,6 @@ set_target_properties(EngineAICore::src_runner_imu PROPERTIES
 
 list(APPEND _IMPORT_CHECK_TARGETS EngineAICore::src_runner_imu )
 list(APPEND _IMPORT_CHECK_FILES_FOR_EngineAICore::src_runner_imu "${_IMPORT_PREFIX}/core/lib/libsrc_runner_imu.so" )
-
-# Import target "EngineAICore::src_runner_input_command_arbiter" for configuration "Release"
-set_property(TARGET EngineAICore::src_runner_input_command_arbiter APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-set_target_properties(EngineAICore::src_runner_input_command_arbiter PROPERTIES
-  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/core/lib/libsrc_runner_input_command_arbiter.so"
-  IMPORTED_SONAME_RELEASE "libsrc_runner_input_command_arbiter.so"
-  )
-
-list(APPEND _IMPORT_CHECK_TARGETS EngineAICore::src_runner_input_command_arbiter )
-list(APPEND _IMPORT_CHECK_FILES_FOR_EngineAICore::src_runner_input_command_arbiter "${_IMPORT_PREFIX}/core/lib/libsrc_runner_input_command_arbiter.so" )
 
 # Import target "EngineAICore::src_runner_joint_motor_transform_runner" for configuration "Release"
 set_property(TARGET EngineAICore::src_runner_joint_motor_transform_runner APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)

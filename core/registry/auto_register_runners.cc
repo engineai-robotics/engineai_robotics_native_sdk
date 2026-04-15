@@ -6,7 +6,6 @@
 // Factory function declarations
 extern "C" void RegisterIdleRunner(runner::RunnerRegistry& registry);
 extern "C" void RegisterImuRunner(runner::RunnerRegistry& registry);
-extern "C" void RegisterInputCommandArbiterRunner(runner::RunnerRegistry& registry);
 extern "C" void RegisterJointMotorTransformRunner(runner::RunnerRegistry& registry);
 extern "C" void RegisterMotorRunner(runner::RunnerRegistry& registry);
 extern "C" void RegisterParamServerRunner(runner::RunnerRegistry& registry);
@@ -20,7 +19,6 @@ void RegisterAllRunners() {
   auto& registry = RunnerRegistry::Instance();
   RegisterIdleRunner(registry);
   RegisterImuRunner(registry);
-  RegisterInputCommandArbiterRunner(registry);
   RegisterJointMotorTransformRunner(registry);
   RegisterMotorRunner(registry);
   RegisterParamServerRunner(registry);
@@ -30,3 +28,4 @@ void RegisterAllRunners() {
 }
 
 }  // namespace runner
+
