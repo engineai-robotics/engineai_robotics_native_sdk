@@ -28,3 +28,10 @@ Available widgets/components:
 1. `LcmManagerWidget`: connect and disconnect from the target LCM URL.
 2. `VirtualGamepadWidget`: publish virtual gamepad messages for debugging.
 3. `diagnose_gamepad.py`: basic LCM/message diagnostics for the virtual gamepad channel.
+
+## License
+
+This directory is licensed under **GNU General Public License v3.0 or later** (`GPL-3.0-or-later`).
+See `LICENSE` for the full license text.
+
+This subdirectory-specific license applies to the virtual gamepad tool itself. Other parts of the repository remain under the repository root license (`LICENSE.txt`) unless explicitly stated otherwise.
