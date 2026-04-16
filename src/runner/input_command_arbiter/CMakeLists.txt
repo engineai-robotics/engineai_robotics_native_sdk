@@ -36,6 +36,7 @@ target_link_libraries(${CURRENT_TARGET_NAME}
     glog::glog
     fmt::fmt
     Eigen3::Eigen
+    lcm
     src::runner::basic
     src::data
     src::hardware::gamepad

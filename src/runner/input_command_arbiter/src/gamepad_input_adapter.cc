@@ -29,6 +29,7 @@ void GamepadInputAdapter::Run() {
   ReadHardwareInput();
   hardware_available_ = true;
   hardware_input_.hardware_connected = true;
+  ClearLastError();
   hardware_gamepad_publisher_.Publish(hardware_input_);
   Log();
 }
@@ -87,7 +88,7 @@ bool GamepadInputAdapter::CheckDeviceConnected() {
 
     if (gamepad_driver_.Init() != EXIT_SUCCESS) {
       failed_count_ = 0;
-      LOG(ERROR) << "Failed to initialize gamepad driver. Will retry later.";
+      SetLastError("Failed to initialize gamepad driver. Will retry later.");
       return false;
     }
 
@@ -97,11 +98,12 @@ bool GamepadInputAdapter::CheckDeviceConnected() {
   }
 
   if (gamepad_driver_.ListenInput() != EXIT_SUCCESS) {
-    LOG(ERROR) << "Failed to listen to gamepad input. Resetting driver...";
+    SetLastError("Failed to listen to gamepad input. Resetting driver.");
     ResetDriverState();
     return false;
   }
 
+  ClearLastError();
   return true;
 }
 

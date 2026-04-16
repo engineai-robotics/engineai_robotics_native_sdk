@@ -1,6 +1,16 @@
+#include <utility>
+
 #include "input_command_arbiter/base_input_adapter.h"
 
 namespace runner {
+
+void BaseInputAdapter::SetLastError(std::string error) {
+  last_error_ = std::move(error);
+}
+
+void BaseInputAdapter::ClearLastError() {
+  last_error_.clear();
+}
 
 void BaseInputAdapter::Log() const {
   // Keep adapter logging lightweight; detailed state belongs to subclasses.

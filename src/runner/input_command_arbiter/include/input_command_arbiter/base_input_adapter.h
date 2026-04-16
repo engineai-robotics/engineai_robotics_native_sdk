@@ -23,6 +23,7 @@ class BaseInputAdapter {
   virtual bool IsActive() const = 0;
 
   virtual const std::string& GetName() const { return name_; }
+  virtual const std::string& GetLastError() const { return last_error_; }
 
   virtual void Log() const;
   virtual bool IsRetaining() const;
@@ -30,8 +31,12 @@ class BaseInputAdapter {
   virtual void StopRetaining();
 
  protected:
+  void SetLastError(std::string error);
+  void ClearLastError();
+
   std::string name_;
   std::shared_ptr<data::DataStore> data_store_;
+  std::string last_error_;
 
   // Retention state
   bool is_retaining_{false};

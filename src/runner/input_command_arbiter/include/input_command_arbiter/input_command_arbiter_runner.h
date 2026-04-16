@@ -25,6 +25,7 @@ class InputCommandArbiterRunner : public BasicRunner {
 
   // Input sources ordered from low to high priority to form the chain.
   std::vector<std::shared_ptr<BaseInputAdapter>> input_sources_;
+  std::string last_reported_error_;
 };
 
 }  // namespace runner

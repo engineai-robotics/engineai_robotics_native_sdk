@@ -28,16 +28,17 @@ namespace hardware {
 LogitechGamepadDriver::LogitechGamepadDriver() : dev("/dev/input/js0") { memset(buf, 0, sizeof buf); }
 
 int LogitechGamepadDriver::Init() {
-  LOG(INFO) << "Initializing gamepad driver";
+  VLOG(1) << "[INFO] Initializing gamepad driver";
   fd = open(dev.c_str(), O_RDONLY);
   if (fd == -1) {
-    LOG(ERROR) << "Cannot open " << dev << ": " << strerror(errno);
+    VLOG(1) << "[ERROR] Cannot open " << dev << ": " << strerror(errno);
     return EXIT_FAILURE;
   }
   Zeros();
 
   return EXIT_SUCCESS;
 }
+
 void LogitechGamepadDriver::Zeros() {
   /*Key Status*/
 
@@ -111,7 +112,7 @@ int LogitechGamepadDriver::ListenInput() {
     flags |= O_NONBLOCK;
 
     if (fcntl(fd, F_SETFL, flags) < 0) {
-      LOG(ERROR) << "Error setting non-blocking mode";
+      VLOG(1) << "[ERROR] Error setting non-blocking mode";
       Zeros();
       return EXIT_FAILURE;
     }
@@ -129,19 +130,19 @@ int LogitechGamepadDriver::ListenInput() {
     if (fstat(fd, &fd_stat) < 0) {
       // 无法获取文件状态，设备可能已断开
       device_ok = false;
-      LOG(ERROR) << "Cannot get gamepad device status, possible disconnection";
+      VLOG(1) << "[ERROR] Cannot get gamepad device status, possible disconnection";
     }
 
     // 检查读取操作是否失败
     if (n < 0) {
       if (read_errno == ENODEV || read_errno == ENOENT || read_errno == EIO) {
-        LOG(ERROR) << "Error reading from gamepad: device may have been disconnected, error: " << strerror(read_errno);
+        VLOG(1) << "[ERROR] Error reading from gamepad: device may have been disconnected, error: " << strerror(read_errno);
         continue;
       }
     }
 
     if (fcntl(fd, F_SETFL, flags) < 0) {
-      LOG(ERROR) << "Error setting non-blocking mode";
+      VLOG(1) << "[ERROR] Error setting non-blocking mode";
       Zeros();
       return EXIT_FAILURE;
     }
@@ -248,7 +249,7 @@ int LogitechGamepadDriver::ListenInput() {
     // 尝试重新打开特定的ioctl调用来检查设备是否真的存在
     if (device_disconnected) {
       errno = 0;
-      LOG(ERROR) << "Failed to read from gamepad: device appears to be disconnected, error: " << strerror(saved_errno);
+      VLOG(1) << "[ERROR] Failed to read from gamepad: device appears to be disconnected, error: " << strerror(saved_errno);
 
       // 关闭当前文件描述符
       if (fd >= 0) {
@@ -258,10 +259,10 @@ int LogitechGamepadDriver::ListenInput() {
 
       // 重试打开设备
       if (Init() != EXIT_SUCCESS) {
-        LOG(ERROR) << "Failed to reinitialize gamepad device";
+        VLOG(1) << "[ERROR] Failed to reinitialize gamepad device";
         return EXIT_FAILURE;
       } else {
-        LOG(INFO) << "Successfully reconnected to gamepad device";
+        VLOG(1) << "[INFO] Successfully reconnected to gamepad device";
       }
     }
   }
