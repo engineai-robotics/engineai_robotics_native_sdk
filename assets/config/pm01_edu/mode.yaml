@@ -45,6 +45,8 @@ mode:
       scope: rl_walking_example/default
     - tag: rl_dance_example
       scope: rl_dance_example/default
+    - tag: ros2_bridge
+      scope: ros2_bridge/default
 
   sim:
     - tag: resident_task
@@ -77,3 +79,5 @@ mode:
       scope: rl_walking_example/default
     - tag: rl_dance_example
       scope: rl_dance_example/default
+    - tag: ros2_bridge
+      scope: ros2_bridge/default

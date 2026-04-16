@@ -8,10 +8,8 @@ source_dir=$(cd $(dirname $0) && pwd)
 
 # Builds the project
 build_dir="$source_dir/build"
-mkdir -p $build_dir && cd $build_dir
 # build_type: release, debug, releasewithdebinfo
 build_type="releasewithdebinfo"
-
 
 build_tests="OFF"
 module_name=""
@@ -53,6 +51,18 @@ fi
 
 shift $((OPTIND - 1))
 
+echo "Using $num_cores cores."
+echo "Build type: $build_type"
+
+echo "Building ros2 env..."
+./scripts/build_ros2_env.sh
+if [ $? -ne 0 ]; then
+    echo "Failed to build ros2 env."
+    exit 1
+fi
+
+echo "Building project..."
+mkdir -p $build_dir && cd $build_dir
 # Checks if only compiling a specific module
 if [ -n "$module_name" ]; then
   # Checks if build directory and CMakeCache exist
@@ -78,9 +88,6 @@ if [ -z "$num_cores" ]; then
     num_cores=$(nproc)
   fi
 fi
-
-echo "Using $num_cores cores."
-echo "Build type: $build_type"
 
 # Compiles the project or specific module
 if [ -n "$module_name" ]; then

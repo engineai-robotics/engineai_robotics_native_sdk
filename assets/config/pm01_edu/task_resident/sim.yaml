@@ -31,3 +31,11 @@ tasks:
     runner:
       - name: sim_publish_runner
         enabled: true
+
+  - task: ros2_bridge
+    cpu: 2
+    priority: 10
+    period: 0.002
+    runner:
+      - name: ros2_bridge_runner
+        enabled: true
