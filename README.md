@@ -217,6 +217,9 @@ engineai_robotics_env
 
 # Build the simulation module
 ./scripts/build_mujoco.sh
+
+# If GitHub is not accessible, use this command to fetch dependencies from Gitee and build
+./scripts/build_mujoco.sh -m
 ```
 
 #### 1.5.2 Run
