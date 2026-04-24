@@ -209,6 +209,9 @@ engineai_robotics_env
 
 # 编译仿真模块
 ./scripts/build_mujoco.sh
+
+# 如果无法访问 GitHub，可以使用以下命令从 Gitee 镜像下载依赖文件并编译
+./scripts/build_mujoco.sh -m
 ```
 
 #### 1.5.2 运行
