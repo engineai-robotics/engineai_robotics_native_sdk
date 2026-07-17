@@ -1,0 +1,26 @@
+activated_node:
+  - hardware_interface_node
+
+manager_node:
+  subscribe_topics:
+    node_control: /motion/node_control
+
+hardware_interface_node:
+  enable: true
+  period: 0.002
+  mapping_periods:
+    joint_state: 0.002
+    gamepad_keys: 0.02
+    motor_debug: 0.01
+    power_info: 0.05
+  publish_topics:
+    imu_info: /hardware/imu_info
+    gamepad_keys: /hardware/gamepad_keys
+    motor_debug: /hardware/motor_debug
+    power_info: /hardware/power_info
+    motor_state: /hardware/motor_state
+    motor_command: /hardware/motor_command
+    joint_state: /hardware/joint_state
+    joint_command_feedback: /hardware/joint_command_feedback
+  subscribe_topics:
+    led_control: /hardware/led_control

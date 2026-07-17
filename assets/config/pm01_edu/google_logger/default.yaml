@@ -1,0 +1,25 @@
+# Sets global `LOG() level. Log information below this level will not be printed to stderr or file
+# 0: INFO, 1: WARNING, 2: ERROR, 3: FATAL
+glog_level: 0
+
+# Sets where the data is logged to
+# 0: Log to stderr(terminal), 1: Log to file, 2: Log to both
+glog_destination: 2
+
+glog_dir: /tmp/logs
+
+# Sets whether to forward the log to the ROS2 log
+# true: forward the log to the ROS2 log, false: not forward the log to the ROS2 log
+glog_forward: true
+
+# Sets `VLOG() level of setting modules.
+# `vmodule` is recommended to set `glog_level: 0` and `VLOG(1)`, where the value for each modules 0 means no display, 1 means display INFO
+# Otherwise `vmodule` works at VLOG(num)'s num less than the setting value.
+glog_vmodule:
+  task_param: 1
+  imu_runner: 0
+  motor_runner: 0
+  motor_monitor: 0
+  passive_runner: 1
+  remote_handle_planner: 0
+  remote_handle_node: 0

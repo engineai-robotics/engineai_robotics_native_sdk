@@ -1,0 +1,19 @@
+# Joint Motor Transform Runner Configuration
+# This configuration determines which converters are enabled for joint-motor transformation
+
+# Enable parallel joint-motor conversion (for parallel mechanisms like ankle)
+# Set to true for robots with parallel ankle mechanism
+enable_parallel_converter: true
+
+# Enable serial joint-motor conversion (for direct motor-joint connection)
+# Set to true for robots without parallel mechanism
+enable_serial_converter: false
+
+enable_joint_override_converter: true
+
+joint_override_converter_param:
+  position_clamp: [-6.28318, 6.28318]
+  velocity_clamp: [-10.0, 10.0]
+  feed_forward_torque_clamp: [0.0, 30.0]
+  stiffness_clamp: [0.0, 1000.0]
+  damping_clamp: [1, 10]

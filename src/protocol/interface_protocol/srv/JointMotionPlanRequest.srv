@@ -1,0 +1,23 @@
+## 规划请求服务定义
+## request_type 常量定义
+uint8 REQUEST_PLAN_EXECUTE=0    # 规划并执行
+uint8 REQUEST_CANCEL=1          # 取消当前执行
+uint8 REQUEST_RESET=2           # 复位到默认位姿
+
+uint8  request_type
+
+## 运动目标
+bool      use_gravity_compensation
+int32[]   joint_indices           # 空数组表示复位到默认位置
+float64[] target_positions        # 目标关节位置 (rad)
+float64[] target_velocities       # 目标关节速度，可为空表示自动规划
+float64   execution_time          # 规划期望执行时长 (s)
+float64[] stiffness               # 可选，空数组表示默认
+float64[] damping                 # 可选，空数组表示默认
+
+---
+
+## 响应
+bool success                      # 是否成功接受请求
+string message                    # 错误或成功信息
+

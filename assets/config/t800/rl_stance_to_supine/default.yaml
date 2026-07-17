@@ -1,0 +1,168 @@
+# ============================================================
+# Observations (观测配置)
+# ============================================================
+observations:
+  num_single_observations: 83 # 25(joint_pos) + 25(joint_vel) + 25(action) + 3(angular_vel) + 3(gravity) + 2(yaw_forward)
+
+  observation_type:
+    mimic:
+      num_include_obs_steps: 5
+      goal_length: 25
+      goal_scale: 1.0
+      goal_history_steps: 1
+
+  observation_scale:
+    observation_scale_linear_vel: 2.0
+    observation_scale_angular_vel: 1.0
+    observation_scale_dof_pos: 1.0
+    observation_scale_dof_vel: 0.05
+    observation_scale_quat: 1.0
+    observation_scale_dof_pos_ref_diff: 1.0
+    observation_scale_yaw_forward: 1.0
+
+# 行为裁剪范围（推理输出的绝对值上限）
+action_clip: 100.0
+
+# ============================================================
+# Motion State (运动状态)
+# ============================================================
+motion_state:
+  observation_type: "mimic"
+  proprioception_obs_with_yaw: false
+  data_path: "rl_stance_to_supine/trajectory/T800_stand_to_supine.csv"
+  csv_dt: 0.033333 # 1/30s
+  policy_path: "rl_stance_to_supine/policy/T800_stand_to_supine.mnn"
+  traj_frame: [0, 70]
+  replay: false
+  residual_control: true
+  kp_group: joint_kp_0
+  kd_group: joint_kd_0
+  action_scale_group: action_scale_0
+  qd_mask_group: qd_mask_0
+  transition_time: 0.1
+
+# ============================================================
+# Joint Control Parameters (默认关节目标姿态)
+# ============================================================
+default_joint_q:
+  - [
+      -0.7732778293,
+      0.2109002427,
+      -0.2140328236,
+      0.9002003037,
+      -0.2894360952,
+      -0.1873647404,
+    ] # 左腿
+  - [
+      -0.6147637016,
+      -0.1066712524,
+      0.0556522214,
+      0.8299468884,
+      -0.3985402688,
+      0.1808947799,
+    ] # 右腿
+  - [0.0235501909] # 躯干
+  - [
+      -0.6900132027,
+      0.9303021872,
+      -0.1659253576,
+      -1.9041238125,
+      -0.2584387427,
+    ] # 左臂
+  - [
+      -1.1696804212,
+      -0.1520707048,
+      0.6273249496,
+      -1.8817574626,
+      0.2462114231,
+    ] # 右臂
+  - [0.1889251056, 0.6451696690]
+
+# ============================================================
+# Parameter Groups (PD增益 / 动作缩放 / 速度掩码)
+# ============================================================
+joint_kp_0:
+  - [180.0, 95.0, 34.0, 180.0, 12.0, 12.0]
+  - [180.0, 95.0, 34.0, 180.0, 12.0, 12.0]
+  - [34.0]
+  - [24.0, 24.0, 24.0, 24.0, 5.0]
+  - [24.0, 24.0, 24.0, 24.0, 5.0]
+  - [2.5, 2.5]
+
+joint_kd_0:
+  - [21.0, 11.0, 4.0, 21.0, 1.5, 1.5]
+  - [21.0, 11.0, 4.0, 21.0, 1.5, 1.5]
+  - [4.0]
+  - [1.5, 1.5, 1.5, 1.5, 0.3]
+  - [1.5, 1.5, 1.5, 1.5, 0.3]
+  - [0.5, 0.5]
+
+action_scale_0:
+  - [0.25, 0.25, 0.25, 0.25, 0.25, 0.25]
+  - [0.25, 0.25, 0.25, 0.25, 0.25, 0.25]
+  - [0.25]
+  - [0.25, 0.25, 0.25, 0.25, 0.25]
+  - [0.25, 0.25, 0.25, 0.25, 0.25]
+  - [0.25, 0.25]
+
+qd_mask_0:
+  - [1.0, 1.0, 1.0, 1.0, 0.0, 0.0]
+  - [1.0, 1.0, 1.0, 1.0, 0.0, 0.0]
+  - [1.0]
+  - [1.0, 1.0, 1.0, 1.0, 1.0]
+  - [1.0, 1.0, 1.0, 1.0, 1.0]
+  - [1.0, 1.0]
+
+# ============================================================
+# Active Joint Names (策略控制的关节列表)
+# ============================================================
+active_joint_names: [
+    "J00_HIP_PITCH_L",
+    "J01_HIP_ROLL_L",
+    "J02_HIP_YAW_L",
+    "J03_KNEE_PITCH_L",
+    "J04_ANKLE_PITCH_L",
+    "J05_ANKLE_ROLL_L",
+    "J06_HIP_PITCH_R",
+    "J07_HIP_ROLL_R",
+    "J08_HIP_YAW_R",
+    "J09_KNEE_PITCH_R",
+    "J10_ANKLE_PITCH_R",
+    "J11_ANKLE_ROLL_R",
+    "J12_TORSO_YAW",
+    "J13_SHOULDER_PITCH_L",
+    "J14_SHOULDER_ROLL_L",
+    "J15_SHOULDER_YAW_L",
+    "J16_ELBOW_PITCH_L",
+    "J17_ELBOW_YAW_L",
+    "J18_SHOULDER_PITCH_R",
+    "J19_SHOULDER_ROLL_R",
+    "J20_SHOULDER_YAW_R",
+    "J21_ELBOW_PITCH_R",
+    "J22_ELBOW_YAW_R",
+    "J23_HEAD_PITCH",
+    "J24_HEAD_YAW",
+  ]
+
+# ============================================================
+# Sim-to-Real Fine Tuning
+# ============================================================
+linear_vel_delta_bias: 0.001
+angular_vel_delta_bias: 0.001
+imu_install_delta_bias: 0.001
+
+# ============================================================
+# Torque Limits (扭矩限制)
+# ============================================================
+torque_limit: true
+max_torque_joint:
+  - [415, 370, 222, 415, 160, 160]
+  - [415, 370, 222, 415, 160, 160]
+  - [222]
+  - [160, 160, 160, 160, 52]
+  - [160, 160, 160, 160, 52]
+  - [52, 52]
+
+max_lower_body_torque: 1700
+lower_body_joint_count: 12
+transition_time: 0.1 # 全局过渡时间（可被 motion_state 的 transition_time 覆盖）

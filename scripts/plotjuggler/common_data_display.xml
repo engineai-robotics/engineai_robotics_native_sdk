@@ -1,0 +1,796 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+ <tabbed_widget parent="main_window" name="Main Window">
+  <Tab tab_name="joint pos" containers="1">
+   <Container>
+    <DockSplitter sizes="0.251613;0.248387;0.253226;0.246774" orientation="-" count="4">
+     <DockSplitter sizes="0.333005;0.33399;0.333005" orientation="|" count="3">
+      <DockArea name="left hip pitch ">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/position[0]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[0]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="left hip roll">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/position[1]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[1]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="left hip yaw">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/position[2]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[2]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.334319;0.331363;0.334319" orientation="|" count="3">
+      <DockArea name="left knee pitch">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/position[3]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[3]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="left ankle pitch">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/position[4]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[4]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="left ankle roll">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/position[5]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[5]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.334319;0.331363;0.334319" orientation="|" count="3">
+      <DockArea name="right hip pitch">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/position[6]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[6]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="right hip roll">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/position[7]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[7]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="right hip yaw">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/position[8]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[8]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.334319;0.331363;0.334319" orientation="|" count="3">
+      <DockArea name="right knee pitch">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/position[9]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[9]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="right ankle pitch">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/position[10]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[10]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="right ankle roll">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/position[11]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[11]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="joint vel" containers="1">
+   <Container>
+    <DockSplitter sizes="0.251613;0.247581;0.254032;0.246774" orientation="-" count="4">
+     <DockSplitter sizes="0.332677;0.334647;0.332677" orientation="|" count="3">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/velocity[0]"/>
+        <curve color="#d62728" name="/hardware/joint_state/velocity[0]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/velocity[1]"/>
+        <curve color="#d62728" name="/hardware/joint_state/velocity[1]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/velocity[2]"/>
+        <curve color="#d62728" name="/hardware/joint_state/velocity[2]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.334319;0.331363;0.334319" orientation="|" count="3">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/velocity[3]"/>
+        <curve color="#d62728" name="/hardware/joint_state/velocity[3]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/velocity[4]"/>
+        <curve color="#d62728" name="/hardware/joint_state/velocity[4]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/velocity[5]"/>
+        <curve color="#d62728" name="/hardware/joint_state/velocity[5]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.334319;0.331363;0.334319" orientation="|" count="3">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/velocity[6]"/>
+        <curve color="#d62728" name="/hardware/joint_state/velocity[6]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/velocity[7]"/>
+        <curve color="#d62728" name="/hardware/joint_state/velocity[7]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/velocity[8]"/>
+        <curve color="#d62728" name="/hardware/joint_state/velocity[8]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.334319;0.331363;0.334319" orientation="|" count="3">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/velocity[9]"/>
+        <curve color="#d62728" name="/hardware/joint_state/velocity[9]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/velocity[10]"/>
+        <curve color="#d62728" name="/hardware/joint_state/velocity[10]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/velocity[11]"/>
+        <curve color="#d62728" name="/hardware/joint_state/velocity[11]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="joint torque" containers="1">
+   <Container>
+    <DockSplitter sizes="0.251613;0.247581;0.254032;0.246774" orientation="-" count="4">
+     <DockSplitter sizes="0.332677;0.334647;0.332677" orientation="|" count="3">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[0]"/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/torque[0]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[0]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[1]"/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/torque[1]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[1]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[2]"/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/torque[2]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[2]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.334319;0.331363;0.334319" orientation="|" count="3">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[3]"/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/torque[3]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[3]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[4]"/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/torque[4]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[4]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[5]"/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/torque[5]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[5]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.334319;0.331363;0.334319" orientation="|" count="3">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[6]"/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/torque[6]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[6]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[7]"/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/torque[7]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[7]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[8]"/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/torque[8]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[8]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.334319;0.331363;0.334319" orientation="|" count="3">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[9]"/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/torque[9]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[9]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[10]"/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/torque[10]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[10]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[11]"/>
+        <curve color="#1f77b4" name="/hardware/joint_command_feedback/torque[11]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[11]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="motor torque" containers="1">
+   <Container>
+    <DockSplitter sizes="0.251613;0.247581;0.254032;0.246774" orientation="-" count="4">
+     <DockSplitter sizes="0.332677;0.334647;0.332677" orientation="|" count="3">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000012" top="0.100000" right="5.000258" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/motor_command/feed_forward_torque[0]"/>
+        <curve color="#1f77b4" name="/hardware/motor_command/torque[0]"/>
+        <curve color="#d62728" name="/hardware/motor_state/torque[0]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000012" top="0.100000" right="5.000258" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/motor_command/feed_forward_torque[1]"/>
+        <curve color="#1f77b4" name="/hardware/motor_command/torque[1]"/>
+        <curve color="#d62728" name="/hardware/motor_state/torque[1]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000012" top="0.100000" right="5.000258" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/motor_command/feed_forward_torque[2]"/>
+        <curve color="#1f77b4" name="/hardware/motor_command/torque[2]"/>
+        <curve color="#d62728" name="/hardware/motor_state/torque[2]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.334319;0.331363;0.334319" orientation="|" count="3">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000012" top="0.100000" right="5.000258" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/motor_command/feed_forward_torque[3]"/>
+        <curve color="#1f77b4" name="/hardware/motor_command/torque[3]"/>
+        <curve color="#d62728" name="/hardware/motor_state/torque[3]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000012" top="0.100000" right="5.000258" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/motor_command/feed_forward_torque[4]"/>
+        <curve color="#1f77b4" name="/hardware/motor_command/torque[4]"/>
+        <curve color="#d62728" name="/hardware/motor_state/torque[4]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000012" top="0.100000" right="5.000258" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/motor_command/feed_forward_torque[5]"/>
+        <curve color="#1f77b4" name="/hardware/motor_command/torque[5]"/>
+        <curve color="#d62728" name="/hardware/motor_state/torque[5]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.334319;0.331363;0.334319" orientation="|" count="3">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000012" top="0.100000" right="5.000258" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/motor_command/feed_forward_torque[6]"/>
+        <curve color="#1f77b4" name="/hardware/motor_command/torque[6]"/>
+        <curve color="#d62728" name="/hardware/motor_state/torque[6]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000012" top="0.100000" right="5.000258" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/motor_command/feed_forward_torque[7]"/>
+        <curve color="#1f77b4" name="/hardware/motor_command/torque[7]"/>
+        <curve color="#d62728" name="/hardware/motor_state/torque[7]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000012" top="0.100000" right="5.000258" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/motor_command/feed_forward_torque[8]"/>
+        <curve color="#1f77b4" name="/hardware/motor_command/torque[8]"/>
+        <curve color="#d62728" name="/hardware/motor_state/torque[8]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.334319;0.331363;0.334319" orientation="|" count="3">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000012" top="0.100000" right="5.000258" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/motor_command/feed_forward_torque[9]"/>
+        <curve color="#1f77b4" name="/hardware/motor_command/torque[9]"/>
+        <curve color="#d62728" name="/hardware/motor_state/torque[9]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000012" top="0.100000" right="5.000258" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/motor_command/feed_forward_torque[10]"/>
+        <curve color="#1f77b4" name="/hardware/motor_command/torque[10]"/>
+        <curve color="#d62728" name="/hardware/motor_state/torque[10]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000012" top="0.100000" right="5.000258" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/motor_command/feed_forward_torque[11]"/>
+        <curve color="#1f77b4" name="/hardware/motor_command/torque[11]"/>
+        <curve color="#d62728" name="/hardware/motor_state/torque[11]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="imu" containers="1">
+   <Container>
+    <DockSplitter sizes="0.335214;0.329573;0.335214" orientation="-" count="3">
+     <DockSplitter sizes="0.500328;0.499672" orientation="|" count="2">
+      <DockArea name="roll">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.001986" top="0.100000" right="5.000252" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#d62728" name="/hardware/imu_info/rpy/x"/>
+       </plot>
+      </DockArea>
+      <DockArea name="angular x">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.001986" top="0.100000" right="5.000252" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#d62728" name="/hardware/imu_info/angular_velocity/x"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.502626;0.497374" orientation="|" count="2">
+      <DockArea name="pitch">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.001986" top="0.100000" right="5.000252" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/imu_info/rpy/y"/>
+       </plot>
+      </DockArea>
+      <DockArea name="angular y">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.001986" top="0.100000" right="5.000252" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/imu_info/angular_velocity/y"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.502626;0.497374" orientation="|" count="2">
+      <DockArea name="yaw">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.001986" top="0.100000" right="5.000252" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/imu_info/rpy/z"/>
+       </plot>
+      </DockArea>
+      <DockArea name="anguar z">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.001986" top="0.100000" right="5.000252" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f77b4" name="/hardware/imu_info/angular_velocity/z"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="arm joint pos" containers="1">
+   <Container>
+    <DockSplitter sizes="0.25;0.25;0.25;0.25" orientation="-" count="4">
+     <DockSplitter sizes="0.20046;0.199803;0.199474;0.199803;0.20046" orientation="|" count="5">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/position[13]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[13]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/position[14]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[14]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/position[15]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[15]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/position[16]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[16]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/position[17]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[17]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.200789;0.198817;0.200789;0.198817;0.200789" orientation="|" count="5">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[13]"/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/torque[13]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[13]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[14]"/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/torque[14]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[14]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[15]"/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/torque[15]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[15]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[16]"/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/torque[16]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[16]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[17]"/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/torque[17]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[17]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.200789;0.198817;0.200789;0.198817;0.200789" orientation="|" count="5">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/position[18]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[18]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/position[19]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[19]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/position[20]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[20]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/position[21]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[21]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/position[22]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[22]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.200789;0.198817;0.200789;0.198817;0.200789" orientation="|" count="5">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[18]"/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/torque[18]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[18]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[19]"/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/torque[19]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[19]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[20]"/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/torque[20]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[20]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[21]"/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/torque[21]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[21]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[22]"/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/torque[22]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[22]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="waist" containers="1">
+   <Container>
+    <DockSplitter sizes="0.500805;0.499195" orientation="-" count="2">
+     <DockSplitter sizes="0.500328;0.499672" orientation="|" count="2">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/position[12]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[12]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/position[23]"/>
+        <curve color="#d62728" name="/hardware/joint_state/position[23]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter sizes="0.502626;0.497374" orientation="|" count="2">
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[12]"/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/torque[12]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[12]"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_x="false" style="Lines" flip_y="false" mode="TimeSeries">
+        <range left="0.000000" top="0.100000" right="4.998290" bottom="-0.100000"/>
+        <limitY/>
+        <curve color="#1ac938" name="/hardware/joint_command_feedback/feed_forward_torque[23]"/>
+        <curve color="#1f7bb4" name="/hardware/joint_command_feedback/torque[23]"/>
+        <curve color="#d62728" name="/hardware/joint_state/torque[23]"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <currentTabIndex index="0"/>
+ </tabbed_widget>
+ <use_relative_time_offset enabled="1"/>
+ <!-- - - - - - - - - - - - - - - -->
+ <!-- - - - - - - - - - - - - - - -->
+ <Plugins>
+  <plugin ID="DataLoad CSV">
+   <parameters time_axis="" delimiter="0"/>
+  </plugin>
+  <plugin ID="DataLoad MCAP"/>
+  <plugin ID="DataLoad ROS2 bags">
+   <use_header_stamp value="false"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+   <boolean_strings_to_number value="true"/>
+   <remove_suffix_from_strings value="true"/>
+   <selected_topics value=""/>
+  </plugin>
+  <plugin ID="DataLoad ULog"/>
+  <plugin ID="ROS2 Topic Subscriber">
+   <use_header_stamp value="false"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+   <boolean_strings_to_number value="true"/>
+   <remove_suffix_from_strings value="true"/>
+   <selected_topics value="/frame/base_link_state;/frame/end_state_in_base/LINK_ELBOW_END_L;/frame/end_state_in_base/LINK_ELBOW_END_R;/frame/end_state_in_base/LINK_FOOT_L;/frame/end_state_in_base/LINK_FOOT_R;/frame/end_state_in_world/LINK_ELBOW_END_L;/frame/end_state_in_world/LINK_ELBOW_END_R;/frame/end_state_in_world/LINK_FOOT_L;/frame/end_state_in_world/LINK_FOOT_R;/hardware/imu_info;/frame/imu_link_state;/hardware/joint_command_feedback;/hardware/joint_state;/hardware/motor_command;/hardware/motor_state;/data_monitor/end_effector/position_0;/data_monitor/end_effector/position_3;/data_monitor/end_effector/position_2;/data_monitor/end_effector/position_1"/>
+  </plugin>
+  <plugin ID="UDP Server"/>
+  <plugin ID="WebSocket Server"/>
+  <plugin ID="ZMQ Subscriber"/>
+  <plugin ID="Fast Fourier Transform"/>
+  <plugin ID="Quaternion to RPY"/>
+  <plugin ID="Reactive Script Editor">
+   <library code="--[[ Helper function to create a series from arrays&#xa;&#xa; new_series: a series previously created with ScatterXY.new(name)&#xa; prefix:     prefix of the timeseries, before the index of the array&#xa; suffix_X:   suffix to complete the name of the series containing the X value. If [nil], use the index of the array.&#xa; suffix_Y:   suffix to complete the name of the series containing the Y value&#xa; timestamp:   usually the tracker_time variable&#xa;              &#xa; Example:&#xa; &#xa; Assuming we have multiple series in the form:&#xa; &#xa;   /trajectory/node.{X}/position/x&#xa;   /trajectory/node.{X}/position/y&#xa;   &#xa; where {N} is the index of the array (integer). We can create a reactive series from the array with:&#xa; &#xa;   new_series = ScatterXY.new(&quot;my_trajectory&quot;) &#xa;   CreateSeriesFromArray( new_series, &quot;/trajectory/node&quot;, &quot;position/x&quot;, &quot;position/y&quot;, tracker_time );&#xa;--]]&#xa;&#xa;function CreateSeriesFromArray( new_series, prefix, suffix_X, suffix_Y, timestamp )&#xa;  &#xa;  --- clear previous values&#xa;  new_series:clear()&#xa;  &#xa;  --- Append points to new_series&#xa;  index = 0&#xa;  while(true) do&#xa;&#xa;    x = index;&#xa;    -- if not nil, get the X coordinate from a series&#xa;    if suffix_X ~= nil then &#xa;      series_x = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_X) )&#xa;      if series_x == nil then break end&#xa;      x = series_x:atTime(timestamp)&#x9; &#xa;    end&#xa;    &#xa;    series_y = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_Y) )&#xa;    if series_y == nil then break end &#xa;    y = series_y:atTime(timestamp)&#xa;    &#xa;    new_series:push_back(x,y)&#xa;    index = index+1&#xa;  end&#xa;end&#xa;&#xa;--[[ Similar to the built-in function GetSeriesNames(), but select only the names with a give prefix. --]]&#xa;&#xa;function GetSeriesNamesByPrefix(prefix)&#xa;  -- GetSeriesNames(9 is a built-in function&#xa;  all_names = GetSeriesNames()&#xa;  filtered_names = {}&#xa;  for i, name in ipairs(all_names)  do&#xa;    -- check the prefix&#xa;    if name:find(prefix, 1, #prefix) then&#xa;      table.insert(filtered_names, name);&#xa;    end&#xa;  end&#xa;  return filtered_names&#xa;end&#xa;&#xa;--[[ Modify an existing series, applying offsets to all their X and Y values&#xa;&#xa; series: an existing timeseries, obtained with TimeseriesView.find(name)&#xa; delta_x: offset to apply to each x value&#xa; delta_y: offset to apply to each y value &#xa;  &#xa;--]]&#xa;&#xa;function ApplyOffsetInPlace(series, delta_x, delta_y)&#xa;  -- use C++ indeces, not Lua indeces&#xa;  for index=0, series:size()-1 do&#xa;    x,y = series:at(index)&#xa;    series:set(index, x + delta_x, y + delta_y)&#xa;  end&#xa;end&#xa;"/>
+   <scripts/>
+  </plugin>
+  <plugin ID="CSV Exporter"/>
+  <plugin ID="ROS2 Topic Re-Publisher"/>
+ </Plugins>
+ <!-- - - - - - - - - - - - - - - -->
+ <previouslyLoaded_Datafiles/>
+ <!-- - - - - - - - - - - - - - - -->
+ <customMathEquations/>
+ <snippets/>
+ <!-- - - - - - - - - - - - - - - -->
+</root>
+

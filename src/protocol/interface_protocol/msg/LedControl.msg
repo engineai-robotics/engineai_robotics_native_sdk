@@ -1,0 +1,13 @@
+uint8 BLINK_RED = 0x1
+uint8 BLINK_GREEN = 0x2
+uint8 BLINK_BLUE = 0x3
+uint8 BLINK_WHITE = 0x4
+uint8 CONSTANT_ON_WHITE = 0x5
+uint8 CONSTANT_ON_GREEN = 0x6
+uint8 BREATHE_WHITE = 0x7
+uint8 WATER_WHITE = 0x8
+uint8 BREATHE_RED = 0x9
+uint8 BLINK_ORANGE = 0xa
+uint8 CONSTANT_ON_ORANGE = 0xb
+
+uint8 color

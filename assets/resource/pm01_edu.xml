@@ -1,0 +1,4 @@
+<mujoco model="global_model">
+    <include file="robot/pm01_edu/xml/serial_pm01_edu.xml"/>
+    <include file="environment/ground.xml"/>
+</mujoco>

@@ -1,0 +1,20 @@
+#pragma once
+#include <Eigen/Dense>
+#include <string>
+#include <vector>
+#include "rl_mimic_trajectory_example_param/rl_mimic_trajectory_example_param.h"
+
+namespace rl_mimic_trajectory {
+
+class CsvLoader {
+ public:
+  // 读取csv并插值，返回[N, 24]的矩阵
+  static Eigen::MatrixXd LoadAndInterpolateJointTrajectory(const std::string& csv_path,
+                                                           const std::vector<std::string>& joint_names, double src_dt,
+                                                           double target_dt, int start_frame, int end_frame);
+
+  static Eigen::MatrixXd LoadProfileTrajectory(const data::MotionStateProfile& profile,
+                                               const data::RlMinicTrajectoryParam& param, double runner_period = 0.02);
+};
+
+}  // namespace rl_mimic_trajectory
