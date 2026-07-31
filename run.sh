@@ -32,7 +32,7 @@ find "$dmpfile_dir" -maxdepth 1 -type f -name "*.dmp" | sort > "$before_list_fil
 
 echo "[INFO] Run the executor:"
 # Opens the executor path
-install_dir="$source_dir/build/_install"
+install_dir="$source_dir/build/x86_64/_install"
 cd $install_dir/bin
 
 # Runs executable files

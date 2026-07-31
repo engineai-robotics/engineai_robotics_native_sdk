@@ -27,13 +27,14 @@ native_sdk/
 ├── core/                # 核心框架库
 ├── docker/              # 容器环境相关脚本
 │   └── generate.sh      # 生成容器开发环境
-├── scripts/             # 辅助脚本（仿真编译/运行等）
+├── scripts/             # 辅助脚本（仿真编译/运行、交叉编译等）
+│   └── cross_compile_env.sh  # 交叉编译容器启动脚本
 ├── simulation/          # Mujoco 仿真模块
 ├── src/                 # 业务源码
 │   ├── runner/          # 运动控制模块（Runner 插件）
 │   ├── executor/        # 执行器模块
 │   └── data/            # 数据处理模块
-├── build.sh             # 编译脚本
+├── build.sh             # 编译脚本（支持本机与 aarch64 交叉编译）
 ├── run.sh               # 运行脚本
 └── install.sh           # 真机部署脚本
 ```
@@ -100,8 +101,64 @@ engineai_robotics_env
 # 进入容器
 engineai_robotics_env
 
-# 执行编译
+# 执行编译（默认本机 x86_64，ROS 2 Humble）
 ./build.sh
+
+# 可选：指定 ROS 2 发行版 / 编译类型
+./build.sh -r humble -t release
+```
+
+常用 `build.sh` 参数：
+
+| 参数 | 说明 |
+|:----:|:-----|
+| `-a` | 架构：`x86_64`（默认）或 `aarch64` |
+| `-r` | ROS 2 发行版：`humble`（默认）或 `jazzy` |
+| `-t` | 编译类型：`release`、`debug`、`releasewithdebinfo`（默认） |
+| `-j` | 并行编译线程数 |
+| `-h` | 显示帮助 |
+
+#### 1.2.1 交叉编译（aarch64）
+
+部分机器人的板载计算机为 **aarch64** 架构。可在 x86_64 宿主机上交叉编译面向真机的二进制。指定 `-a aarch64` 时，`./build.sh` 会通过 `scripts/cross_compile_env.sh` 自动拉起交叉编译 Docker 镜像，请在**宿主机**上执行（不要在 `engineai_robotics_env` 容器内执行）。
+
+**支持的 ROS 2 与架构组合：**
+
+| ROS 2 | 架构 | 说明 |
+|:-----:|:----:|:-----|
+| humble | x86_64 | 本机编译（默认） |
+| humble | aarch64 | 交叉编译 |
+| jazzy | aarch64 | 交叉编译 |
+
+```bash
+# 可预先拉取交叉编译镜像
+./scripts/cross_compile_env.sh pull
+
+# 交叉编译 aarch64（默认 ROS 2 Humble）
+./build.sh -a aarch64
+
+# 使用 ROS 2 Jazzy 交叉编译
+./build.sh -a aarch64 -r jazzy
+```
+
+产物安装目录为 `build/aarch64/_install`。
+
+使用的镜像：
+
+- Humble：`ghcr.io/engineai-robotics/cross_compile_env:latest`
+- Jazzy：`ghcr.io/engineai-robotics/cross_compile_env_jazzy:latest`
+
+交互式交叉编译环境（可选）：
+
+```bash
+# 进入交叉编译容器交互式 Shell（Humble）
+./scripts/cross_compile_env.sh shell
+
+# 或使用 Jazzy 镜像
+./scripts/cross_compile_env.sh --ros jazzy shell
+
+# 在容器中执行一次性命令
+./scripts/cross_compile_env.sh run "./build.sh -a aarch64"
 ```
 
 ### 1.3 运行
@@ -278,8 +335,12 @@ remote_dir="~/projects/engineai_robotics"
 ```bash
 cd native_sdk
 
-# ./install.sh <机型> <mode>
+# ./install.sh <机型> <mode> [arch]
+# arch 可选：x86_64 或 aarch64，默认 x86_64
 ./install.sh pm01_edu robot
+
+# 部署 aarch64 产物（需先执行 ./build.sh -a aarch64）
+./install.sh pm01_edu robot aarch64
 ```
 
 #### 1.6.2 真机运行

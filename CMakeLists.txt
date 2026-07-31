@@ -21,6 +21,18 @@ find_package(lcm REQUIRED)
 find_package(pinocchio REQUIRED)
 find_package(qpOASES REQUIRED)
 
+# ROS 2 dependencies (only when building ROS 2 components)
+if(BUILD_ROS2)
+  set(ROS2_VERSION "humble" CACHE STRING "ROS 2 distro to use (e.g. humble, jazzy)")
+  set_property(CACHE ROS2_VERSION PROPERTY STRINGS "humble" "jazzy")
+  message(STATUS "ROS 2 version: ${ROS2_VERSION}")
+
+  # Ensure CMake can find ROS 2 installed under /opt/ros/${ROS2_VERSION}
+  list(APPEND CMAKE_PREFIX_PATH "/opt/ros/${ROS2_VERSION}")
+  # Fast-CDR is required by Fast RTPS based type support
+  find_package(fastcdr REQUIRED)
+endif()
+
 include(AddGoogleTest)
 include(GetNamespace)
 include(GetAliasNamespace)
@@ -82,9 +94,11 @@ if(EXISTS "${_SDK_CONFIG_PATH}")
     message(STATUS "SDK Framework Mode: ${SDK_FRAMEWORK_MODE}")
     if(DEFINED EngineAICore_LIB_DIR AND EXISTS "${EngineAICore_LIB_DIR}")
         message(STATUS "SDK Framework Mode: staging core libs into install prefix lib/")
-        install(DIRECTORY "${EngineAICore_LIB_DIR}/"
+        get_filename_component(_engineai_core_lib_dir "${EngineAICore_LIB_DIR}" REALPATH)
+        install(DIRECTORY "${_engineai_core_lib_dir}/"
             DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
         )
+        unset(_engineai_core_lib_dir)
     else()
         message(WARNING "EngineAICore_LIB_DIR not found, skip staging core libs to install prefix")
     endif()

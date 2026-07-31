@@ -62,7 +62,18 @@ setup_hardware_env() {
 }
 
 setup_ros() {    
-    source /opt/ros/humble/setup.bash
+    ros_distro="humble"
+    if [ -d "/opt/ros/humble" ]; then
+        ros_distro="humble"
+    elif [ -d "/opt/ros/jazzy" ]; then
+        ros_distro="jazzy"
+    else
+        echo "ROS distro not found"
+        echo "Please install ROS Humble or Jazzy first"
+        exit 1
+    fi
+
+    source /opt/ros/${ros_distro}/setup.bash
     export ROS_DOMAIN_ID=69
 }
 

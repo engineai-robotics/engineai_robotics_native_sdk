@@ -16,7 +16,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_targetsDefined)
 set(_targetsNotDefined)
 set(_expectedTargets)
-foreach(_expectedTarget EngineAICore::src_app EngineAICore::src_common_base EngineAICore::src_common_containers EngineAICore::src_common_monitor EngineAICore::src_common_parameter EngineAICore::src_common_tool EngineAICore::src_core_estimator_base_state_estimator EngineAICore::src_core_estimator_motion_state_estimator EngineAICore::src_core_estimator_parallel_ankle EngineAICore::src_core_estimator_parallel_palms EngineAICore::src_core_math EngineAICore::src_core_model EngineAICore::src_data EngineAICore::src_hardware_imu EngineAICore::src_runner_basic EngineAICore::src_runner_idle EngineAICore::src_runner_imu EngineAICore::src_runner_joint_motor_transform_runner EngineAICore::src_runner_motor EngineAICore::src_runner_param_server EngineAICore::src_runner_sim_publish EngineAICore::src_runner_sim_subscribe EngineAICore::src_runner_whole_body_estimate EngineAICore::src_task)
+foreach(_expectedTarget EngineAICore::src_app EngineAICore::src_common_base EngineAICore::src_common_containers EngineAICore::src_common_monitor EngineAICore::src_common_parameter EngineAICore::src_common_tool EngineAICore::src_core_estimator_base_state_estimator EngineAICore::src_core_estimator_motion_state_estimator EngineAICore::src_core_estimator_parallel_ankle EngineAICore::src_core_estimator_parallel_palms EngineAICore::src_core_math EngineAICore::src_core_model EngineAICore::src_data EngineAICore::src_hardware_imu EngineAICore::src_runner_basic EngineAICore::src_runner_imu EngineAICore::src_runner_joint_motor_transform_runner EngineAICore::src_runner_motor EngineAICore::src_runner_param_server EngineAICore::src_runner_sim_publish EngineAICore::src_runner_sim_subscribe EngineAICore::src_runner_whole_body_estimate EngineAICore::src_task)
   list(APPEND _expectedTargets ${_expectedTarget})
   if(NOT TARGET ${_expectedTarget})
     list(APPEND _targetsNotDefined ${_expectedTarget})
@@ -41,14 +41,19 @@ unset(_targetsNotDefined)
 unset(_expectedTargets)
 
 
-# The installation prefix configured by this project.
-get_filename_component(_IMPORT_PREFIX "${CMAKE_CURRENT_LIST_DIR}/../.." ABSOLUTE)
+# Compute the installation prefix relative to this file.
+get_filename_component(_IMPORT_PREFIX "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
+get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
+if(_IMPORT_PREFIX STREQUAL "/")
+  set(_IMPORT_PREFIX "")
+endif()
 
 # Create imported target EngineAICore::src_app
 add_library(EngineAICore::src_app SHARED IMPORTED)
 
 set_target_properties(EngineAICore::src_app PROPERTIES
-  INTERFACE_LINK_LIBRARIES "EngineAICore::src_common_tool;EngineAICore::src_task"
+  INTERFACE_LINK_LIBRARIES "EngineAICore::src_common_tool;EngineAICore::src_task;EngineAICore::src_runner_basic;EngineAICore::src_runner_imu;EngineAICore::src_runner_joint_motor_transform_runner;EngineAICore::src_runner_motor;EngineAICore::src_runner_param_server;EngineAICore::src_runner_sim_publish;EngineAICore::src_runner_sim_subscribe;EngineAICore::src_runner_whole_body_estimate"
   INTERFACE_SOURCES ""
 )
 
@@ -153,7 +158,7 @@ set_target_properties(EngineAICore::src_data PROPERTIES
 add_library(EngineAICore::src_hardware_imu SHARED IMPORTED)
 
 set_target_properties(EngineAICore::src_hardware_imu PROPERTIES
-  INTERFACE_LINK_LIBRARIES "yaml-cpp::yaml-cpp;glog::glog;fmt::fmt;Eigen3::Eigen;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so"
+  INTERFACE_LINK_LIBRARIES "yaml-cpp::yaml-cpp;glog::glog;fmt::fmt;Eigen3::Eigen;Boost::thread"
   INTERFACE_SOURCES ""
 )
 
@@ -162,14 +167,6 @@ add_library(EngineAICore::src_runner_basic SHARED IMPORTED)
 
 set_target_properties(EngineAICore::src_runner_basic PROPERTIES
   INTERFACE_LINK_LIBRARIES "yaml-cpp::yaml-cpp;glog::glog;fmt::fmt;Eigen3::Eigen;EngineAICore::src_data;EngineAICore::src_common_monitor;EngineAICore::src_common_tool;EngineAICore::src_core_math"
-  INTERFACE_SOURCES ""
-)
-
-# Create imported target EngineAICore::src_runner_idle
-add_library(EngineAICore::src_runner_idle SHARED IMPORTED)
-
-set_target_properties(EngineAICore::src_runner_idle PROPERTIES
-  INTERFACE_LINK_LIBRARIES "yaml-cpp::yaml-cpp;glog::glog;fmt::fmt;Eigen3::Eigen;EngineAICore::src_runner_basic"
   INTERFACE_SOURCES ""
 )
 

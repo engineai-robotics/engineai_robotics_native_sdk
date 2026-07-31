@@ -145,16 +145,6 @@ set_target_properties(EngineAICore::src_runner_basic PROPERTIES
 list(APPEND _IMPORT_CHECK_TARGETS EngineAICore::src_runner_basic )
 list(APPEND _IMPORT_CHECK_FILES_FOR_EngineAICore::src_runner_basic "${_IMPORT_PREFIX}/core/lib/libsrc_runner_basic.so" )
 
-# Import target "EngineAICore::src_runner_idle" for configuration "Release"
-set_property(TARGET EngineAICore::src_runner_idle APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-set_target_properties(EngineAICore::src_runner_idle PROPERTIES
-  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/core/lib/libsrc_runner_idle.so"
-  IMPORTED_SONAME_RELEASE "libsrc_runner_idle.so"
-  )
-
-list(APPEND _IMPORT_CHECK_TARGETS EngineAICore::src_runner_idle )
-list(APPEND _IMPORT_CHECK_FILES_FOR_EngineAICore::src_runner_idle "${_IMPORT_PREFIX}/core/lib/libsrc_runner_idle.so" )
-
 # Import target "EngineAICore::src_runner_imu" for configuration "Release"
 set_property(TARGET EngineAICore::src_runner_imu APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(EngineAICore::src_runner_imu PROPERTIES

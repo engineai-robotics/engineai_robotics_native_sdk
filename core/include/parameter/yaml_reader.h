@@ -18,8 +18,8 @@ class YamlReader {
   ~YamlReader();
 
   void LoadFile(std::string_view scope, std::string_view file_path);
-  void MergeToRootFile(std::string_view scope);
-  void SaveFile(std::string_view scope, std::string_view path);
+  bool MergeToRootFile(std::string_view scope);
+  bool SaveFile(std::string_view scope, std::string_view path);
   const std::string& GetRootPath() const { return root_path_; }
 
   const YAML::Node& FindNode(std::string_view path, bool optional = false);

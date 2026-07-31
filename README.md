@@ -27,13 +27,14 @@ native_sdk/
 ├── core/                # Core framework library
 ├── docker/              # Container environment scripts
 │   └── generate.sh      # Generate container dev environment
-├── scripts/             # Utility scripts (simulation build/run, etc.)
+├── scripts/             # Utility scripts (simulation build/run, cross-compile, etc.)
+│   └── cross_compile_env.sh  # Cross-compile container launcher
 ├── simulation/          # Mujoco simulation module
 ├── src/                 # Application source code
 │   ├── runner/          # Motion control modules (Runner plugins)
 │   ├── executor/        # Executor module
 │   └── data/            # Data processing module
-├── build.sh             # Build script
+├── build.sh             # Build script (supports native and aarch64 cross-compile)
 ├── run.sh               # Run script
 └── install.sh           # Real-robot deployment script
 ```
@@ -113,8 +114,64 @@ engineai_robotics_env
 # Enter the container
 engineai_robotics_env
 
-# Build
+# Build (native x86_64, ROS 2 Humble by default)
 ./build.sh
+
+# Optional: specify ROS 2 distro / build type
+./build.sh -r humble -t release
+```
+
+Common `build.sh` options:
+
+| Option | Description |
+|:------:|:------------|
+| `-a` | Architecture: `x86_64` (default) or `aarch64` |
+| `-r` | ROS 2 distro: `humble` (default) or `jazzy` |
+| `-t` | Build type: `release`, `debug`, `releasewithdebinfo` (default) |
+| `-j` | Number of parallel compile jobs |
+| `-h` | Show help |
+
+#### 1.2.1 Cross Compilation (aarch64)
+
+Some robots use an **aarch64** onboard computer. You can cross-compile binaries for the real robot on an x86_64 host. When `-a aarch64` is specified, `./build.sh` automatically launches the cross-compile Docker image via `scripts/cross_compile_env.sh` — run this from the **host machine** (not inside `engineai_robotics_env`).
+
+**Supported ROS 2 + architecture combinations:**
+
+| ROS 2 | Architecture | Notes |
+|:-----:|:------------:|:------|
+| humble | x86_64 | Native build (default) |
+| humble | aarch64 | Cross-compile |
+| jazzy | aarch64 | Cross-compile |
+
+```bash
+# Optionally pull cross-compile images in advance
+./scripts/cross_compile_env.sh pull
+
+# Cross-compile for aarch64 (ROS 2 Humble by default)
+./build.sh -a aarch64
+
+# Cross-compile with ROS 2 Jazzy
+./build.sh -a aarch64 -r jazzy
+```
+
+Artifacts are installed to `build/aarch64/_install`.
+
+Images used:
+
+- Humble: `ghcr.io/engineai-robotics/cross_compile_env:latest`
+- Jazzy: `ghcr.io/engineai-robotics/cross_compile_env_jazzy:latest`
+
+Interactive cross-compile environment (optional):
+
+```bash
+# Enter an interactive shell in the cross-compile container (Humble)
+./scripts/cross_compile_env.sh shell
+
+# Or use the Jazzy image
+./scripts/cross_compile_env.sh --ros jazzy shell
+
+# Run a one-off command in the container
+./scripts/cross_compile_env.sh run "./build.sh -a aarch64"
 ```
 
 ### 1.3 Run
@@ -290,8 +347,12 @@ Execute the installation:
 ```bash
 cd native_sdk
 
-# ./install.sh <robot_model> <mode>
+# ./install.sh <robot_model> <mode> [arch]
+# arch is optional: x86_64 or aarch64 (default: x86_64)
 ./install.sh pm01_edu robot
+
+# Deploy aarch64 artifacts (after ./build.sh -a aarch64)
+./install.sh pm01_edu robot aarch64
 ```
 
 #### 1.6.2 Running on the Real Robot

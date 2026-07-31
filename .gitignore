@@ -30,6 +30,7 @@
 **/.neptune/*
 docker/artifacts/
 *.tmp
+/core/lib
 
 # Isaac-Sim packman
 _isaac_sim*

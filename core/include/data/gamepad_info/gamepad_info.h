@@ -1,6 +1,7 @@
 #ifndef DATA_GAMEPAD_INFO_GAMEPAD_INFO_H_
 #define DATA_GAMEPAD_INFO_GAMEPAD_INFO_H_
 
+#include <array>
 #include <atomic>
 #include <memory>
 #include <string>
