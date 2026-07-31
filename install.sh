@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Usage: ./install.sh <product_name> <mode>
-# Example: ./install.sh pm_v2 robot
+# Usage: ./install.sh <product_name> <mode> [arch]
+# Example: 
+#    ./install.sh pm_v2 robot x86_64
+#    ./install.sh pm_v2 robot aarch64
 # Exits on error
 set -e
 
@@ -15,24 +17,48 @@ remote_dest="${remote_user}@${remote_host}"
 
 # Gets the source directory
 source_dir=$(cd $(dirname $0) && pwd)
-local_install_dir="$source_dir/build/_install"
 local_scripts=("$source_dir/scripts/run_robot.sh" "$source_dir/scripts/env_robot.sh" "$source_dir/scripts/set_imu_tty.sh")
 local_assets_dir="$source_dir/assets"
+
+usage() {
+    echo "Usage: $0 <product_name> <mode> [arch]"
+    echo "  product_name: the name of the product"
+    echo "  mode: the mode of the product"
+    echo "  arch: the architecture of the product (x86_64 or aarch64, default: x86_64)"
+    echo "Example:"
+    echo "    $0 pm_v2 robot"
+    echo "    $0 pm_v2 robot x86_64"
+    echo "    $0 pm_v2 robot aarch64"
+    exit 0
+}
 
 # Requires product_name and mode; prints red error and exits if missing
 if [ $# -lt 2 ] || [ -z "$1" ] || [ -z "$2" ]; then
     echo -e "\033[31mERROR: product name and mode are required.\033[0m"
-    echo -e "\033[31mExample: ./install.sh pm01_edu robot\033[0m"
+    usage
     exit 1
 fi
 product_name="$1"
 active_mode="$2"
-echo "Installing for product: $product_name with mode: $active_mode"
+
+if [ $# -ge 3 ]; then
+    arch="$3"
+    if [ "$arch" != "x86_64" ] && [ "$arch" != "aarch64" ]; then
+        echo -e "\033[31mERROR: invalid arch: $arch\033[0m"
+        usage
+        exit 1
+    fi
+else
+    arch="x86_64"
+fi
+
+local_install_dir="$source_dir/build/${arch}/_install"
+echo "Installing for product: $product_name with mode: $active_mode and arch: $arch"
 
 temp_dir=$(mktemp -d)
-# Reuses a single SSH connection so password is only prompted once
-ssh_control_path="${temp_dir}/ssh_%r_%h_%p"
-trap "ssh -o ControlPath=${ssh_control_path} -O exit ${remote_dest} 2>/dev/null || true; rm -rf $temp_dir" EXIT
+ssh_ctl_dir=$(mktemp -d)
+ssh_control_path="${ssh_ctl_dir}/ssh_%r_%h_%p"
+trap "ssh -o ControlPath=${ssh_control_path} -O exit ${remote_dest} 2>/dev/null || true; rm -rf $temp_dir $ssh_ctl_dir" EXIT
 
 echo "temp_dir: ${temp_dir}"
 rsync -av "${local_install_dir}" "${temp_dir}"

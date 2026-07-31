@@ -2,6 +2,7 @@
 #define RUNNER_BASIC_INCLUDE_BASIC_BASIC_RUNNER_H_
 
 #include <memory>
+#include <string_view>
 
 #include "data_store/data_store.h"
 
@@ -39,6 +40,8 @@ class BasicRunner {
   virtual TransitionState TryExit();
   virtual bool Exit();
   virtual void End();
+
+  virtual bool IsTransitionAllowed(std::string_view /*target_motion*/) const { return true; }
 
   void SetRunnerState(RunnerState state) { runner_state_ = state; }
   RunnerState GetRunnerState() const { return runner_state_; }
