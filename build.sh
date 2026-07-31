@@ -205,3 +205,13 @@ else
   make install
   echo "Full build completed."
 fi
+
+echo "Sync third party libraries..."
+third_party="/opt/engineai_robotics_third_party"
+if [ ! -d "${third_party}" ]; then
+  echo "Third party library directory not found: ${third_party}"
+  exit 1
+fi
+
+rsync -a --delete --include=/bin/handler --exclude=/bin/* --exclude=*mujoco* "${third_party}/" "${install_dir}/engineai_robotics_third_party/"
+echo "Copied third party to ${install_dir}"
