@@ -17,7 +17,7 @@ remote_dest="${remote_user}@${remote_host}"
 
 # Gets the source directory
 source_dir=$(cd $(dirname $0) && pwd)
-local_scripts=("$source_dir/scripts/run_robot.sh" "$source_dir/scripts/env_robot.sh" "$source_dir/scripts/set_imu_tty.sh")
+local_scripts=("$source_dir/scripts/run_robot.sh" "$source_dir/scripts/set_imu_tty.sh")
 local_assets_dir="$source_dir/assets"
 
 usage() {
