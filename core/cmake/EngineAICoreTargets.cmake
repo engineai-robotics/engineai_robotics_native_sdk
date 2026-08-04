@@ -16,7 +16,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_targetsDefined)
 set(_targetsNotDefined)
 set(_expectedTargets)
-foreach(_expectedTarget EngineAICore::src_app EngineAICore::src_common_base EngineAICore::src_common_containers EngineAICore::src_common_monitor EngineAICore::src_common_parameter EngineAICore::src_common_tool EngineAICore::src_core_estimator_base_state_estimator EngineAICore::src_core_estimator_motion_state_estimator EngineAICore::src_core_estimator_parallel_ankle EngineAICore::src_core_estimator_parallel_palms EngineAICore::src_core_math EngineAICore::src_core_model EngineAICore::src_data EngineAICore::src_hardware_imu EngineAICore::src_runner_basic EngineAICore::src_runner_imu EngineAICore::src_runner_joint_motor_transform_runner EngineAICore::src_runner_motor EngineAICore::src_runner_param_server EngineAICore::src_runner_sim_publish EngineAICore::src_runner_sim_subscribe EngineAICore::src_runner_whole_body_estimate EngineAICore::src_task)
+foreach(_expectedTarget EngineAICore::src_app EngineAICore::src_common_base EngineAICore::src_common_containers EngineAICore::src_common_monitor EngineAICore::src_common_parameter EngineAICore::src_common_tool EngineAICore::src_core_estimator_base_state_estimator EngineAICore::src_core_estimator_motion_state_estimator EngineAICore::src_core_estimator_parallel_ankle EngineAICore::src_core_estimator_parallel_palms EngineAICore::src_core_math EngineAICore::src_core_model EngineAICore::src_data EngineAICore::src_hardware_common EngineAICore::src_hardware_imu EngineAICore::src_runner_basic EngineAICore::src_runner_imu EngineAICore::src_runner_joint_motor_transform_runner EngineAICore::src_runner_motor EngineAICore::src_runner_param_server EngineAICore::src_runner_sim_publish EngineAICore::src_runner_sim_subscribe EngineAICore::src_runner_whole_body_estimate EngineAICore::src_task)
   list(APPEND _expectedTargets ${_expectedTarget})
   if(NOT TARGET ${_expectedTarget})
     list(APPEND _targetsNotDefined ${_expectedTarget})
@@ -154,11 +154,19 @@ set_target_properties(EngineAICore::src_data PROPERTIES
   INTERFACE_SOURCES ""
 )
 
+# Create imported target EngineAICore::src_hardware_common
+add_library(EngineAICore::src_hardware_common SHARED IMPORTED)
+
+set_target_properties(EngineAICore::src_hardware_common PROPERTIES
+  INTERFACE_LINK_LIBRARIES "pthread"
+  INTERFACE_SOURCES ""
+)
+
 # Create imported target EngineAICore::src_hardware_imu
 add_library(EngineAICore::src_hardware_imu SHARED IMPORTED)
 
 set_target_properties(EngineAICore::src_hardware_imu PROPERTIES
-  INTERFACE_LINK_LIBRARIES "yaml-cpp::yaml-cpp;glog::glog;fmt::fmt;Eigen3::Eigen;Boost::thread"
+  INTERFACE_LINK_LIBRARIES "yaml-cpp::yaml-cpp;glog::glog;fmt::fmt;Eigen3::Eigen;Boost::thread;EngineAICore::src_hardware_common"
   INTERFACE_SOURCES ""
 )
 

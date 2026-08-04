@@ -125,6 +125,16 @@ set_target_properties(EngineAICore::src_data PROPERTIES
 list(APPEND _IMPORT_CHECK_TARGETS EngineAICore::src_data )
 list(APPEND _IMPORT_CHECK_FILES_FOR_EngineAICore::src_data "${_IMPORT_PREFIX}/core/lib/libsrc_data.so" )
 
+# Import target "EngineAICore::src_hardware_common" for configuration "Release"
+set_property(TARGET EngineAICore::src_hardware_common APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(EngineAICore::src_hardware_common PROPERTIES
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/core/lib/libsrc_hardware_common.so"
+  IMPORTED_SONAME_RELEASE "libsrc_hardware_common.so"
+  )
+
+list(APPEND _IMPORT_CHECK_TARGETS EngineAICore::src_hardware_common )
+list(APPEND _IMPORT_CHECK_FILES_FOR_EngineAICore::src_hardware_common "${_IMPORT_PREFIX}/core/lib/libsrc_hardware_common.so" )
+
 # Import target "EngineAICore::src_hardware_imu" for configuration "Release"
 set_property(TARGET EngineAICore::src_hardware_imu APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(EngineAICore::src_hardware_imu PROPERTIES
