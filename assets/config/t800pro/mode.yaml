@@ -1,0 +1,74 @@
+active_mode: sim
+
+mode:
+  robot:
+    - tag: resident_task
+      scope: task_resident/robot
+    - tag: motion_task
+      scope: task_motion/default
+    - tag: global_options
+      scope: global_options/release
+    - tag: lcm
+      scope: lcm/robot
+    - tag: google_logger
+      scope: google_logger/default
+    - tag: motor
+      scope: motor/default
+    - tag: model
+      scope: model/default
+    - tag: base_state_estimator
+      scope: base_state_estimator/default
+    - tag: motion_state_estimator
+      scope: motion_state_estimator/default
+    - tag: parallel_ankle
+      scope: parallel_ankle/default
+    - tag: parallel_palms
+      scope: parallel_palms/default
+    - tag: joint_motor_transform
+      scope: joint_motor_transform_runner/default
+    - tag: idle
+      scope: idle/default
+    - tag: passive
+      scope: passive/default
+    - tag: pd_stand
+      scope: pd_stand/robot
+    - tag: rl_walking_example
+      scope: rl_walking_example/default
+    - tag: ros2_bridge
+      scope: ros2_bridge/default
+
+  sim:
+    - tag: resident_task
+      scope: task_resident/sim
+    - tag: motion_task
+      scope: task_motion/default
+    - tag: global_options
+      scope: global_options/release
+    - tag: lcm
+      scope: lcm/default
+    - tag: google_logger
+      scope: google_logger/default
+    - tag: motor
+      scope: motor/default
+    - tag: model
+      scope: model/default
+    - tag: base_state_estimator
+      scope: base_state_estimator/default
+    - tag: motion_state_estimator
+      scope: motion_state_estimator/default
+    - tag: parallel_ankle
+      scope: parallel_ankle/default
+    - tag: parallel_palms
+      scope: parallel_palms/default
+    - tag: joint_motor_transform
+      scope: joint_motor_transform_runner/default
+    - tag: idle
+      scope: idle/default
+    - tag: passive
+      scope: passive/default
+    - tag: pd_stand
+      scope: pd_stand/default
+    - tag: rl_walking_example
+      scope: rl_walking_example/default
+    - tag: ros2_bridge
+      scope: ros2_bridge/default

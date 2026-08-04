@@ -1,0 +1,255 @@
+<mujoco model = "serial_links">
+
+  <body name="LINK_HIP_PITCH_L" pos="0 0.0791811 0.003934">
+    <joint name="J00_HIP_PITCH_L" pos="0 0 0" axis="0 0.9659258 -0.258819" range="-2.879 2.181" actuatorfrcrange="-415 415" armature="0.2427264"/>
+    <inertial pos="0.0098348 0.0383312 -0.0947205" mass="3.4625143" fullinertia="0.0078922 0.0086242 0.0046768 -0.0001048 0.0005782 0.0005442"/>
+    <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_HIP_PITCH_L_mat" type="mesh" mesh="LINK_HIP_PITCH_L" />
+    <geom pos="0.003284 0.041416 -0.107329" quat="0.7071068 0 -0.7071068 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="cylinder" size="0.06 0.075" />
+    <body name="LINK_HIP_ROLL_L" pos="0.0046468 0.0403267 -0.1075171">
+      <joint name="J01_HIP_ROLL_L" pos="0 0 0" axis="1 0 0" range="-0.2618 1.7444" actuatorfrcrange="-370 370" armature="0.14110848"/>
+      <inertial pos="0.0381028 0.0001842 -0.0434432" mass="0.967965" fullinertia="0.0029886 0.0029989 0.0022627 0.0000085 -0.000699 0.0000056"/>
+      <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_HIP_ROLL_L_mat" type="mesh" mesh="LINK_HIP_ROLL_L" />
+      <body name="LINK_HIP_YAW_L" pos="0.0095706 0 -0.0805123">
+        <joint name="J02_HIP_YAW_L" pos="0 0 0" axis="0 0 1" range="-1.4137 3.8921" actuatorfrcrange="-222 222" armature="0.0448737"/>
+        <inertial pos="-0.0204121 0.004978 -0.1839359" mass="6.4807794" fullinertia="0.0942464 0.0973837 0.0106791 0.0000272 -0.0133387 0.0005662"/>
+        <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_HIP_YAW_L_mat" type="mesh" mesh="LINK_HIP_YAW_L" />
+        <geom pos="0.000088 0.000511 -0.098474" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="cylinder" size="0.08 0.1" />
+        <body name="LINK_KNEE_PITCH_L" pos="-0.0378129 -0.0000493 -0.2879317">
+          <joint name="J03_KNEE_PITCH_L" pos="0 0 0" axis="0 1 0" range="-0.261667 2.355" actuatorfrcrange="-415 415" armature="0.2427264"/>
+          <inertial pos="-0.0196837 0.0011826 -0.2139105" mass="6.2345254" fullinertia="0.0904393 0.0906126 0.0132167 -0.000069 -0.0036548 -0.0007538"/>
+          <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_KNEE_PITCH_L_mat" type="mesh" mesh="LINK_KNEE_PITCH_L" />
+          <geom pos="0.006765 0 -0.005743" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="sphere" size="0.085" />
+          <geom pos="-0.015866 0.000177 -0.251636" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="cylinder" size="0.075 0.15" />
+          <body name="LINK_ANKLE_PITCH_L" pos="-0.0027136 0 -0.4385989">
+            <joint name="J04_ANKLE_PITCH_L" pos="0 0 0" axis="0 1 0" range="-0.68068 0.68068" actuatorfrcrange="-160 160" armature="0.0354625"/>
+            <inertial pos="-0.0000368 0 -0.0088703" mass="0.1442214" fullinertia="0.0000678 0.0000849 0.0000383 0 0.0000009 0"/>
+            <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_ANKLE_PITCH_L_mat" type="mesh" mesh="LINK_ANKLE_PITCH_L" />
+            <body name="LINK_ANKLE_ROLL_L" pos="0.0011073 0 -0.0379282">
+              <joint name="J05_ANKLE_ROLL_L" pos="0 0 0" axis="1 0 0" range="-0.3491 0.1745" actuatorfrcrange="-160 160" armature="0.0354625"/>
+              <inertial pos="-0.0007647 -0.0013492 -0.020984" mass="1.5234891" fullinertia="0.0021461 0.0066936 0.0063199 0.0001123 0.0010036 -0.000018"/>
+              <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_ANKLE_ROLL_L_mat" type="mesh" mesh="LINK_ANKLE_ROLL_L" />
+              <body name="LINK_FOOT_L">
+                <inertial pos="0 0 0" mass="1e-3" diaginertia="1e-12 1e-12 1e-12"/>
+                <geom class="collision_left_fore_foot"/>
+                <geom class="collision_left_hind_foot"/>
+                <geom class="collision_left_foot_heel"/>
+                <site name="force_sensor_left_foot"/>
+                <site name="torque_sensor_left_foot"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </body>
+  <body name="LINK_HIP_PITCH_R" pos="0 -0.0791811 0.003934">
+    <joint name="J06_HIP_PITCH_R" pos="0 0 0" axis="0 0.9659258 0.258819" range="-2.879 2.181" actuatorfrcrange="-415 415" armature="0.2427264"/>
+    <inertial pos="0.0098348 -0.0383312 -0.0947205" mass="3.4625143" fullinertia="0.0078922 0.0086242 0.0046768 0.0001048 0.0005782 -0.0005442"/>
+    <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_HIP_PITCH_R_mat" type="mesh" mesh="LINK_HIP_PITCH_R" />
+    <geom pos="0.0032842 -0.0414164 -0.1073289" quat="0.7071068 0 -0.7071068 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="cylinder" size="0.06 0.075" />
+    <body name="LINK_HIP_ROLL_R" pos="0.0046468 -0.0403267 -0.1075171">
+      <joint name="J07_HIP_ROLL_R" pos="0 0 0" axis="1 0 0" range="-1.7444 0.2618" actuatorfrcrange="-370 370" armature="0.14110848"/>
+      <inertial pos="0.0381028 -0.0001842 -0.0434432" mass="0.967965" fullinertia="0.0029886 0.0029989 0.0022627 -0.0000085 -0.000699 -0.0000056"/>
+      <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_HIP_ROLL_R_mat" type="mesh" mesh="LINK_HIP_ROLL_R" />
+      <body name="LINK_HIP_YAW_R" pos="0.0095706 0 -0.0805123">
+        <joint name="J08_HIP_YAW_R" pos="0 0 0" axis="0 0 1" range="-3.8921 1.4137" actuatorfrcrange="-222 222" armature="0.0448737"/>
+        <inertial pos="-0.0204121 -0.004978 -0.1839359" mass="6.4807794" fullinertia="0.0942464 0.0973837 0.0106791 -0.0000272 -0.0133387 -0.0005662"/>
+        <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_HIP_YAW_R_mat" type="mesh" mesh="LINK_HIP_YAW_R" />
+        <geom pos="0.0000884 -0.0005113 -0.0984738" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="cylinder" size="0.08 0.1" />
+        <body name="LINK_KNEE_PITCH_R" pos="-0.0378129 0.0000493 -0.2879317">
+          <joint name="J09_KNEE_PITCH_R" pos="0 0 0" axis="0 1 0" range="-0.261667 2.355" actuatorfrcrange="-415 415" armature="0.2427264"/>
+          <inertial pos="-0.0196837 -0.0011826 -0.2139105" mass="6.2345254" fullinertia="0.0904393 0.0906126 0.0132167 0.000069 -0.0036548 0.0007538"/>
+          <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_KNEE_PITCH_R_mat" type="mesh" mesh="LINK_KNEE_PITCH_R" />
+          <geom pos="0.0067655 0 -0.0057426" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="sphere" size="0.085" />
+          <geom pos="-0.0158661 0.000177 -0.2516356" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="cylinder" size="0.075 0.15" />
+          <body name="LINK_ANKLE_PITCH_R" pos="-0.0027136 0 -0.4385989">
+            <joint name="J10_ANKLE_PITCH_R" pos="0 0 0" axis="0 1 0" range="-0.68068 0.68068" actuatorfrcrange="-160 160" armature="0.0354625"/>
+            <inertial pos="-0.0000368 0 -0.0088703" mass="0.1442214" fullinertia="0.0000678 0.0000849 0.0000383 0 0.0000009 0"/>
+            <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_ANKLE_PITCH_R_mat" type="mesh" mesh="LINK_ANKLE_PITCH_R" />
+            <body name="LINK_ANKLE_ROLL_R" pos="0.0011073 0 -0.0379282">
+              <joint name="J11_ANKLE_ROLL_R" pos="0 0 0" axis="1 0 0" range="-0.1745 0.3491" actuatorfrcrange="-160 160" armature="0.0354625"/>
+              <inertial pos="-0.0007647 0.0013492 -0.020984" mass="1.5234891" fullinertia="0.0021461 0.0066936 0.0063199 -0.0001123 0.0010036 0.000018"/>
+              <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_ANKLE_ROLL_R_mat" type="mesh" mesh="LINK_ANKLE_ROLL_R" />
+              <body name="LINK_FOOT_R">
+                <inertial pos="0 0 0" mass="1e-3" diaginertia="1e-12 1e-12 1e-12"/>
+                <geom class="collision_right_fore_foot"/>
+                <geom class="collision_right_hind_foot"/>
+                <geom class="collision_right_foot_heel"/>
+                <site name="force_sensor_right_foot"/>
+                <site name="torque_sensor_right_foot"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </body>
+  <body name="LINK_WAIST_YAW" pos="0 0 0.1069647">
+    <joint name="J12_TORSO_YAW" pos="0 0 0" axis="0 0 1" range="-2.81 2.81" actuatorfrcrange="-222 222" armature="0.0448737"/>
+    <inertial pos="-0.0111503 -0.000791 0.2276308" mass="19.3335435" fullinertia="0.2671415 0.2114411 0.1691651 -0.0000987 0.006881 0.0003179"/>
+    <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_WAIST_YAW_mat" type="mesh" mesh="LINK_WAIST_YAW" />
+    <geom pos="-0.0083431 0 0.2438351" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="box" size="0.12 0.145 0.125" />
+    <geom pos="-0.0051799 0.001274 0.0623352" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="box" size="0.11 0.1 0.05" />
+    <body name="LINK_SHOULDER_PITCH_L" pos="-0.011 0.1628476 0.2796846">
+      <joint name="J13_SHOULDER_PITCH_L" pos="0 0 0" axis="0 0.9967789 0.0801989" range="-3.229 2.443" actuatorfrcrange="-160 160" armature="0.0354625"/>
+      <inertial pos="-0.0090639 0.0526849 -0.012179" mass="1.7493721" fullinertia="0.0033247 0.0021641 0.002742 0.0001454 -0.0000393 0.0003048"/>
+      <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_SHOULDER_PITCH_L_mat" type="mesh" mesh="LINK_SHOULDER_PITCH_L" />
+      <body name="LINK_SHOULDER_ROLL_L" pos="0 0.062716 -0.01544">
+        <joint name="J14_SHOULDER_ROLL_L" pos="0 0 0" axis="1 0 0" range="-0.384 2.487" actuatorfrcrange="-160 160" armature="0.0354625"/>
+        <inertial pos="-0.0096206 0.004525 -0.0284205" mass="0.6224869" fullinertia="0.0014151 0.0019063 0.0012472 -0.0000147 0.0001018 0.0000967"/>
+        <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_SHOULDER_ROLL_L_mat" type="mesh" mesh="LINK_SHOULDER_ROLL_L" />
+        <geom pos="0 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="sphere" size="0.065" />
+        <body name="LINK_SHOULDER_YAW_L" pos="0.000035 0.0085246 -0.082712">
+          <joint name="J15_SHOULDER_YAW_L" pos="0 0 0" axis="0 -0.0714974 0.9974408" range="-2.618 2.618" actuatorfrcrange="-160 160" armature="0.0354625"/>
+          <inertial pos="0.0001229 0.0028058 -0.0886134" mass="2.4408053" fullinertia="0.0112762 0.0117665 0.0025862 0.0000033 0.000051 0.0002767"/>
+          <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_SHOULDER_YAW_L_mat" type="mesh" mesh="LINK_SHOULDER_YAW_L" />
+          <geom pos="-0.000787 0.003995 -0.038378" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="cylinder" size="0.05 0.045" />
+          <body name="LINK_ELBOW_PITCH_L" pos="0.0018418 0.0135916 -0.1507221">
+            <joint name="J16_ELBOW_PITCH_L" pos="0 0 0" axis="0 0.9974408 0.0714974" range="-2.295 0.288" actuatorfrcrange="-160 160" armature="0.0354625"/>
+            <inertial pos="-0.0091902 0.0003287 -0.0711953" mass="1.245428" fullinertia="0.0033867 0.0032131 0.0014075 0.000038 -0.0000804 0.000412"/>
+            <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_ELBOW_PITCH_L_mat" type="mesh" mesh="LINK_ELBOW_PITCH_L" />
+            <geom pos="0 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="sphere" size="0.06" />
+            <body name="LINK_ELBOW_YAW_L" pos="-0.002164 0.0094625 -0.13202">
+              <joint name="J17_ELBOW_YAW_L" pos="0 0 0" axis="-0.21644 -0.069803 0.9738" range="-2.618 2.618" actuatorfrcrange="-52 52" armature="0.00671625"/>
+              <inertial pos="0.0125571 0.0067102 -0.0586872" mass="1.0325057" fullinertia="0.0021904 0.0023751 0.000865 -0.0000345 0.0002984 0.0001458"/>
+              <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_ELBOW_YAW_L_mat" type="mesh" mesh="LINK_ELBOW_YAW_L" />
+              <geom pos="0.003284 0.002024 -0.047775" quat="0.9922018 0.0242891 -0.1222158 0.0029918" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="cylinder" size="0.045 0.075" />
+              <body name="LINK_WRIST_PITCH_L" pos="0.030857 0.010504 -0.13955">
+                <joint name="J18_WRIST_PITCH_L" pos="0 0 0" axis="0 0.99744 0.071497" range="-0.436 0.436" actuatorfrcrange="-5 5" armature="0.005"/>
+                <inertial pos="0.0007808 -0.0005527 -0.0028189" mass="0.0797618" fullinertia="0.0000143 0.0000075 0.0000136 0.0000003 0.0000001 -0.000002"/>
+                <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_WRIST_PITCH_L_mat" type="mesh" mesh="LINK_WRIST_PITCH_L" />
+                <body name="LINK_WRIST_ROLL_L" pos="0 0 0">
+                  <joint name="J19_WRIST_ROLL_L" pos="0 0 0" axis="0.9763 -0.015475 0.21589" range="-1.047 0.611" actuatorfrcrange="-5 5" armature="0.005"/>
+                  <inertial pos="0.0103543 -0.0012991 -0.0689484" mass="0.2590047" fullinertia="0.0002232 0.000323 0.0001479 -0.0000057 0.0000503 0.0000101"/>
+                  <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_WRIST_ROLL_L_mat" type="mesh" mesh="LINK_WRIST_ROLL_L" />
+                  <geom pos="0 0 -0.049591" quat="0.9914035 0 -0.1308398 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="sphere" size="0.05" />
+                  <body name="LINK_THUMB_BASE_L" pos="0.027092 -0.0036291 -0.044807">
+                    <joint name="J20_THUMB_BASE_L" pos="0 0 0" axis="-0.216 -0.0059881 0.97638" range="-2.007 0" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                    <inertial pos="0.0057839 0.0005845 -0.0020926" mass="0.120801" fullinertia="0.0000292 0.000042 0.0000335 0.0000007 -0.0000034 0.0000008"/>
+                    <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_THUMB_BASE_L_mat" type="mesh" mesh="LINK_THUMB_BASE_L" />
+                    <body name="LINK_THUMB_MID_L" pos="0.032401 -0.0006589 0.0072837">
+                      <joint name="J21_THUMB_MID_L" pos="0 0 0" axis="0.013817 0.99986 0.0091887" range="0 1.5708" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                      <inertial pos="0.0138732 -0.0001589 0.0037788" mass="0.0998978" fullinertia="0.0000083 0.0000271 0.0000264 -0.0000002 -0.000004 -0.0000001"/>
+                      <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_THUMB_MID_L_mat" type="mesh" mesh="LINK_THUMB_MID_L" />
+                      <body name="LINK_THUMB_TIP_L" pos="0.028313 -0.0004202 0.0062609">
+                        <joint name="J22_THUMB_TIP_L" pos="0 0 0" axis="0.013817 0.99986 0.0091887" range="0 1.5708" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                        <inertial pos="0.0183223 -0.0013561 0.0050551" mass="0.0276245" fullinertia="0.0000033 0.0000073 0.0000081 -0.0000006 -0.0000008 -0.0000002"/>
+                        <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_THUMB_TIP_L_mat" type="mesh" mesh="LINK_THUMB_TIP_L" />
+                      </body>
+                    </body>
+                  </body>
+                  <body name="LINK_INDEX_BASE_L" pos="0.037772 -0.0033483 -0.091423">
+                    <joint name="J23_INDEX_BASE_L" pos="0 0 0" axis="0.9763 -0.015475 0.21589" range="-1.6929 0" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                    <inertial pos="0.0055254 0.0012293 -0.0262149" mass="0.0753739" fullinertia="0.0000235 0.0000262 0.0000099 0.0000002 0.0000039 -0.0000003"/>
+                    <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_INDEX_BASE_L_mat" type="mesh" mesh="LINK_INDEX_BASE_L" />
+                    <body name="LINK_INDEX_TIP_L" pos="0.0086389 0.0002395 -0.039055">
+                      <joint name="J24_INDEX_TIP_L" pos="0 0 0" axis="0.9763 -0.015475 0.21589" range="-1.85 0" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                      <inertial pos="0.0017044 0.0024912 -0.0162507" mass="0.0322173" fullinertia="0.0000081 0.0000096 0.0000038 -0.0000001 0.0000006 0.0000005"/>
+                      <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_INDEX_TIP_L_mat" type="mesh" mesh="LINK_INDEX_TIP_L" />
+                    </body>
+                  </body>
+                  <body name="LINK_MIDDLE_BASE_L" pos="0.0036017 -0.0028067 -0.098979">
+                    <joint name="J25_MIDDLE_BASE_L" pos="0 0 0" axis="0.9763 -0.015475 0.21589" range="-1.6929 0" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                    <inertial pos="0.0055251 0.0012293 -0.0262149" mass="0.0753739" fullinertia="0.0000235 0.0000262 0.0000099 0.0000002 0.0000039 -0.0000003"/>
+                    <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_MIDDLE_BASE_L_mat" type="mesh" mesh="LINK_MIDDLE_BASE_L" />
+                    <body name="LINK_MIDDLE_TIP_L" pos="0.0086373 0.0002396 -0.039056">
+                      <joint name="J26_MIDDLE_TIP_L" pos="0 0 0" axis="0.9763 -0.015475 0.21589" range="-1.85 0" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                      <inertial pos="0.0041609 0.0025034 -0.0156521" mass="0.0322698" fullinertia="0.0000078 0.0000097 0.0000042 -0.0000001 0.0000014 0.0000005"/>
+                      <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_MIDDLE_TIP_L_mat" type="mesh" mesh="LINK_MIDDLE_TIP_L" />
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="LINK_SHOULDER_PITCH_R" pos="-0.011 -0.1628476 0.2796846">
+      <joint name="J27_SHOULDER_PITCH_R" pos="0 0 0" axis="0 0.9967789 -0.0801989" range="-3.229 2.443" actuatorfrcrange="-160 160" armature="0.0354625"/>
+      <inertial pos="-0.0090639 -0.0526849 -0.012179" mass="1.7493721" fullinertia="0.0033247 0.0021641 0.002742 -0.0001454 -0.0000393 -0.0003048"/>
+      <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_SHOULDER_PITCH_R_mat" type="mesh" mesh="LINK_SHOULDER_PITCH_R" />
+      <body name="LINK_SHOULDER_ROLL_R" pos="0 -0.062716 -0.01544">
+        <joint name="J28_SHOULDER_ROLL_R" pos="0 0 0" axis="1 0 0" range="-2.487 0.384" actuatorfrcrange="-160 160" armature="0.0354625"/>
+        <inertial pos="-0.0096206 -0.004525 -0.0284205" mass="0.6224869" fullinertia="0.0014151 0.0019063 0.0012472 0.0000147 0.0001018 -0.0000967"/>
+        <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_SHOULDER_ROLL_R_mat" type="mesh" mesh="LINK_SHOULDER_ROLL_R" />
+        <geom pos="0 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="LINK_SHOULDER_ROLL_R_geom_1" type="sphere" size="0.065" />
+        <body name="LINK_SHOULDER_YAW_R" pos="0.000035 -0.0085246 -0.082712">
+          <joint name="J29_SHOULDER_YAW_R" pos="0 0 0" axis="0 0.0714974 0.9974408" range="-2.618 2.618" actuatorfrcrange="-160 160" armature="0.0354625"/>
+          <inertial pos="0.0001229 -0.0028058 -0.0886134" mass="2.4408053" fullinertia="0.0112762 0.0117665 0.0025862 -0.0000033 0.000051 -0.0002767"/>
+          <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_SHOULDER_YAW_R_mat" type="mesh" mesh="LINK_SHOULDER_YAW_R" />
+          <geom pos="-0.0007867 -0.003995 -0.038378" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="LINK_SHOULDER_YAW_R_geom_1" type="cylinder" size="0.05 0.045" />
+          <body name="LINK_ELBOW_PITCH_R" pos="0.0018418 -0.0135916 -0.1507221">
+            <joint name="J30_ELBOW_PITCH_R" pos="0 0 0" axis="0 0.9974408 -0.0714974" range="-2.295 0.288" actuatorfrcrange="-160 160" armature="0.0354625"/>
+            <inertial pos="-0.0091902 -0.0003287 -0.0711953" mass="1.245428" fullinertia="0.0033867 0.0032131 0.0014075 -0.000038 -0.0000804 -0.000412"/>
+            <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_ELBOW_PITCH_R_mat" type="mesh" mesh="LINK_ELBOW_PITCH_R" />
+            <geom pos="0 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="LINK_ELBOW_PITCH_R_geom_1" type="sphere" size="0.06" />
+            <body name="LINK_ELBOW_YAW_R" pos="-0.002164 -0.0094625 -0.13202">
+              <joint name="J31_ELBOW_YAW_R" pos="0 0 0" axis="-0.21644 0.069803 0.9738" range="-2.618 2.618" actuatorfrcrange="-52 52" armature="0.00671625"/>
+              <inertial pos="0.0125571 -0.0067102 -0.0586872" mass="1.0325057" fullinertia="0.0021904 0.0023751 0.000865 0.0000345 0.0002984 -0.0001458"/>
+              <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_ELBOW_YAW_R_mat" type="mesh" mesh="LINK_ELBOW_YAW_R" />
+              <geom pos="0.0104949 -0.0020236 -0.0477752" quat="0.9922018 -0.0242891 -0.1222158 -0.0029918" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="LINK_ELBOW_YAW_R_geom_1" type="cylinder" size="0.045 0.075" />
+              <body name="LINK_WRIST_PITCH_R" pos="0.030857 -0.010504 -0.13955">
+                <joint name="J32_WRIST_PITCH_R" pos="0 0 0" axis="0 0.99744 -0.071497" range="-0.436 0.436" actuatorfrcrange="-5 5" armature="0.005"/>
+                <inertial pos="0.0007808 0.0005527 -0.0028189" mass="0.0797618" fullinertia="0.0000143 0.0000075 0.0000136 -0.0000003 0.0000001 0.000002"/>
+                <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_WRIST_PITCH_R_mat" type="mesh" mesh="LINK_WRIST_PITCH_R" />
+                <body name="LINK_WRIST_ROLL_R" pos="0 0 0">
+                  <joint name="J33_WRIST_ROLL_R" pos="0 0 0" axis="0.9763 0.015475 0.21589" range="-0.611 1.047" actuatorfrcrange="-5 5" armature="0.005"/>
+                  <inertial pos="0.0103543 0.0012991 -0.0689484" mass="0.2590047" fullinertia="0.0002232 0.000323 0.0001479 0.0000057 0.0000503 -0.0000101"/>
+                  <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_WRIST_ROLL_R_mat" type="mesh" mesh="LINK_WRIST_ROLL_R" />
+                  <geom pos="0 0 -0.0495907" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="LINK_WRIST_ROLL_R_geom_1" type="sphere" size="0.05" />
+                  <body name="LINK_THUMB_BASE_R" pos="0.027092 0.0036291 -0.044807">
+                    <joint name="J34_THUMB_BASE_R" pos="0 0 0" axis="-0.216 0.0059881 0.97638" range="0 2.007" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                    <inertial pos="0.0057839 -0.0005845 -0.0020926" mass="0.120801" fullinertia="0.0000292 0.000042 0.0000335 -0.0000007 -0.0000034 -0.0000008"/>
+                    <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_THUMB_BASE_R_mat" type="mesh" mesh="LINK_THUMB_BASE_R" />
+                    <body name="LINK_THUMB_MID_R" pos="0.032401 0.0006589 0.0072837">
+                      <joint name="J35_THUMB_MID_R" pos="0 0 0" axis="-0.013817 0.99986 -0.0091887" range="0 1.5708" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                      <inertial pos="0.0138732 0.0001589 0.0037788" mass="0.0998978" fullinertia="0.0000083 0.0000271 0.0000264 0.0000002 -0.000004 0.0000001"/>
+                      <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_THUMB_MID_R_mat" type="mesh" mesh="LINK_THUMB_MID_R" />
+                      <body name="LINK_THUMB_TIP_R" pos="0.028313 0.0004202 0.0062609">
+                        <joint name="J36_THUMB_TIP_R" pos="0 0 0" axis="-0.013817 0.99986 -0.0091887" range="0 1.5708" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                        <inertial pos="0.0183223 0.0013561 0.0050551" mass="0.0276245" fullinertia="0.0000033 0.0000073 0.0000081 0.0000006 -0.0000008 0.0000002"/>
+                        <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_THUMB_TIP_R_mat" type="mesh" mesh="LINK_THUMB_TIP_R" />
+                      </body>
+                    </body>
+                  </body>
+                  <body name="LINK_INDEX_BASE_R" pos="0.037772 0.0033483 -0.091423">
+                    <joint name="J37_INDEX_BASE_R" pos="0 0 0" axis="0.9763 0.015475 0.21589" range="0 1.6929" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                    <inertial pos="0.0055254 -0.0012293 -0.0262149" mass="0.0753739" fullinertia="0.0000235 0.0000262 0.0000099 -0.0000002 0.0000039 0.0000003"/>
+                    <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_INDEX_BASE_R_mat" type="mesh" mesh="LINK_INDEX_BASE_R" />
+                    <body name="LINK_INDEX_TIP_R" pos="0.0086389 -0.0002395 -0.039055">
+                      <joint name="J38_INDEX_TIP_R" pos="0 0 0" axis="0.9763 0.015475 0.21589" range="0 1.85" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                      <inertial pos="0.0017044 -0.0024912 -0.0162507" mass="0.0322173" fullinertia="0.0000081 0.0000096 0.0000038 0.0000001 0.0000006 -0.0000005"/>
+                      <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_INDEX_TIP_R_mat" type="mesh" mesh="LINK_INDEX_TIP_R" />
+                    </body>
+                  </body>
+                  <body name="LINK_MIDDLE_BASE_R" pos="0.0036017 0.0028067 -0.098979">
+                    <joint name="J39_MIDDLE_BASE_R" pos="0 0 0" axis="0.9763 0.015475 0.21589" range="0 1.6929" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                    <inertial pos="0.0055251 -0.0012293 -0.0262149" mass="0.0753739" fullinertia="0.0000235 0.0000262 0.0000099 -0.0000002 0.0000039 0.0000003"/>
+                    <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_MIDDLE_BASE_R_mat" type="mesh" mesh="LINK_MIDDLE_BASE_R" />
+                    <body name="LINK_MIDDLE_TIP_R" pos="0.0086373 -0.0002396 -0.039056">
+                      <joint name="J40_MIDDLE_TIP_R" pos="0 0 0" axis="0.9763 0.015475 0.21589" range="0 1.85" actuatorfrcrange="-1.1 1.1" armature="0.0001265"/>
+                      <inertial pos="0.0041609 -0.0025034 -0.0156521" mass="0.0322698" fullinertia="0.0000078 0.0000097 0.0000042 0.0000001 0.0000014 -0.0000005"/>
+                      <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_MIDDLE_TIP_R_mat" type="mesh" mesh="LINK_MIDDLE_TIP_R" />
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="LINK_HEAD_PITCH" pos="-0.0113 0 0.3868533">
+      <joint name="J41_HEAD_PITCH" pos="0 0 0" axis="0 1 0" range="-0.523 0.523" actuatorfrcrange="-52 52" armature="0.00671625"/>
+      <inertial pos="0.0036925 0.0000821 0.0489158" mass="0.9894784" fullinertia="0.0022167 0.0025192 0.0015897 0.0000005 0.0005052 -0.0000153"/>
+      <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_HEAD_PITCH_mat" type="mesh" mesh="LINK_HEAD_PITCH" />
+      <body name="LINK_HEAD_YAW" pos="0 0 0.0400713">
+        <joint name="J42_HEAD_YAW" pos="0 0 0" axis="0 0 1" range="-1.222 1.222" actuatorfrcrange="-52 52" armature="0.00671625"/>
+        <inertial pos="0.0284863 0.0000417 0.0858035" mass="1.8880708" fullinertia="0.0081173 0.010487 0.0085738 -0.0000041 0.0015 -0.0000076"/>
+        <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="LINK_HEAD_YAW_mat" type="mesh" mesh="LINK_HEAD_YAW" />
+        <geom pos="0.0200123 0 0.084856" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" type="sphere" size="0.1" />
+      </body>
+    </body>
+  </body>
+</mujoco>

@@ -1,0 +1,127 @@
+urdf: serial_t800pro.urdf
+xml: t800pro.xml
+
+# Sets floating base type: fixed, free_by_quaternion, free_by_euler_zyx, planner
+floating_base_type: free_by_quaternion
+verbose: false
+
+limbs:
+  - name: left_leg
+    joints:
+      [
+        J00_HIP_PITCH_L,
+        J01_HIP_ROLL_L,
+        J02_HIP_YAW_L,
+        J03_KNEE_PITCH_L,
+        J04_ANKLE_PITCH_L,
+        J05_ANKLE_ROLL_L,
+      ]
+  - name: right_leg
+    joints:
+      [
+        J06_HIP_PITCH_R,
+        J07_HIP_ROLL_R,
+        J08_HIP_YAW_R,
+        J09_KNEE_PITCH_R,
+        J10_ANKLE_PITCH_R,
+        J11_ANKLE_ROLL_R,
+      ]
+  - name: waist
+    joints: [J12_TORSO_YAW]
+  - name: left_arm
+    joints:
+      [
+        J13_SHOULDER_PITCH_L,
+        J14_SHOULDER_ROLL_L,
+        J15_SHOULDER_YAW_L,
+        J16_ELBOW_PITCH_L,
+        J17_ELBOW_YAW_L,
+        J18_WRIST_PITCH_L,
+        J19_WRIST_ROLL_L,
+      ]
+  - name: left_hand
+    joints:
+      [
+        J20_THUMB_BASE_L,
+        J21_THUMB_MID_L,
+        J22_THUMB_TIP_L,
+        J23_INDEX_BASE_L,
+        J24_INDEX_TIP_L,
+        J25_MIDDLE_BASE_L,
+        J26_MIDDLE_TIP_L,
+      ]
+  - name: right_arm
+    joints:
+      [
+        J27_SHOULDER_PITCH_R,
+        J28_SHOULDER_ROLL_R,
+        J29_SHOULDER_YAW_R,
+        J30_ELBOW_PITCH_R,
+        J31_ELBOW_YAW_R,
+        J32_WRIST_PITCH_R,
+        J33_WRIST_ROLL_R,
+      ]
+  - name: right_hand
+    joints:
+      [
+        J34_THUMB_BASE_R,
+        J35_THUMB_MID_R,
+        J36_THUMB_TIP_R,
+        J37_INDEX_BASE_R,
+        J38_INDEX_TIP_R,
+        J39_MIDDLE_BASE_R,
+        J40_MIDDLE_TIP_R,
+      ]
+  - name: head
+    joints: [J41_HEAD_PITCH, J42_HEAD_YAW]
+
+parallel_groups:
+  # 脚踝并行解算
+  - name: left_ankle
+    joints: [J04_ANKLE_PITCH_L, J05_ANKLE_ROLL_L]
+  - name: right_ankle
+    joints: [J10_ANKLE_PITCH_R, J11_ANKLE_ROLL_R]
+
+  # 手腕并行解算
+  - name: left_palms
+    joints: [J18_WRIST_PITCH_L, J19_WRIST_ROLL_L]
+  - name: right_palms
+    joints: [J32_WRIST_PITCH_R, J33_WRIST_ROLL_R]
+
+# Note each limbs must have a corresponding end-effector frame (arms: elbow yaw as terminal link)
+end_effector_frames:
+  [
+    LINK_FOOT_L,
+    LINK_FOOT_R,
+    LINK_WAIST_YAW,
+    LINK_WRIST_ROLL_L,
+    LINK_THUMB_BASE_L,
+    LINK_WRIST_ROLL_R,
+    LINK_THUMB_BASE_R,
+    LINK_HEAD_YAW,
+  ]
+
+# TODO(qsy): Add more contact information
+contact:
+  - name: left_foot_contact
+    belonging: left_leg
+    type: rectangular
+    frame: LINK_FOOT_L
+    vertices_offset:
+      - [0.126295, 0.053555, 0]
+      - [0.126295, -0.053555, 0]
+      - [-0.126295, -0.053555, 0]
+      - [-0.126295, 0.053555, 0]
+    friction: 0.8
+    confidence_interval: 0.2
+  - name: right_foot_contact
+    belonging: right_leg
+    type: rectangular
+    frame: LINK_FOOT_R
+    vertices_offset:
+      - [0.126295, 0.053555, 0]
+      - [0.126295, -0.053555, 0]
+      - [-0.126295, -0.053555, 0]
+      - [-0.126295, 0.053555, 0]
+    friction: 0.8
+    confidence_interval: 0.2

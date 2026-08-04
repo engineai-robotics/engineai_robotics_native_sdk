@@ -1,0 +1,40 @@
+# Motion State Estimator Configuration
+
+# 融合权重（会自动归一化）
+joint_velocity_weight: 0.8
+imu_weight: 0.2
+
+# 下肢12个关节的速度阈值（rad/s）
+# 对应顺序: 左腿6个关节 + 右腿6个关节
+joint_velocity_thresholds:
+  - 0.4 # J01_HIP_ROLL_L
+  - 0.4 # J02_HIP_YAW_L
+  - 0.4 # J03_HIP_PITCH_L
+  - 0.4 # J04_KNEE_PITCH_L
+  - 0.4 # J05_ANKLE_PITCH_L
+  - 0.4 # J06_ANKLE_ROLL_L
+  - 0.4 # J07_HIP_ROLL_R
+  - 0.4 # J08_HIP_YAW_R
+  - 0.4 # J09_HIP_PITCH_R
+  - 0.4 # J10_KNEE_PITCH_R
+  - 0.4 # J11_ANKLE_PITCH_R
+  - 0.4 # J12_ANKLE_ROLL_R
+
+# IMU角速度阈值（rad/s）- [x, y, z]
+imu_angular_velocity_thresholds:
+  - 0.05 # x轴角速度
+  - 0.05 # y轴角速度
+  - 10 # z轴角速度
+
+# IMU线性加速度阈值（m/s²）- [x, y, z]
+imu_linear_acceleration_thresholds:
+  - 0.2 # x轴加速度
+  - 0.2 # y轴加速度
+  - 10 # z轴加速度
+
+# 滑动窗口持续时间（秒）
+sliding_window_duration: 0.3
+
+# 判断站立的融合阈值（0.0-1.0）
+# 当融合结果低于此阈值时，判定为站立静止
+standing_still_threshold: 0.8

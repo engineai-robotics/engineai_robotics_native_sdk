@@ -1,0 +1,13 @@
+foot_sensor_noise_height: 0.001
+foot_sensor_noise_position: 0.001
+foot_sensor_noise_velocity: 0.1
+foot_process_noise_position: 0.002
+imu_process_noise_position: 0.02
+imu_process_noise_velocity: 0.02
+compensate_yaw_bias: false
+# foot_contact_phase_trust_window must be in [0, 0.5]
+foot_contact_phase_trust_window: 0.2
+noise_increase_factor: 1000.0
+noise_decrease_factor: 0.8
+num_init_iterations: 100
+use_simulated_state: true

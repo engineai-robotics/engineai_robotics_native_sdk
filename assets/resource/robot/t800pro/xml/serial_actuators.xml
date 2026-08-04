@@ -1,0 +1,56 @@
+<mujoco model="serial_actuators">
+
+    <actuator>
+        <motor name="motor_J00_HIP_PITCH_L" joint="J00_HIP_PITCH_L" gear="1" ctrllimited="true" ctrlrange="-415 415" />
+        <motor name="motor_J01_HIP_ROLL_L" joint="J01_HIP_ROLL_L" gear="1" ctrllimited="true" ctrlrange="-370 370" />
+        <motor name="motor_J02_HIP_YAW_L" joint="J02_HIP_YAW_L" gear="1" ctrllimited="true" ctrlrange="-222 222" />
+        <motor name="motor_J03_KNEE_PITCH_L" joint="J03_KNEE_PITCH_L" gear="1" ctrllimited="true" ctrlrange="-415 415" />
+        <motor name="motor_J04_ANKLE_PITCH_L" joint="J04_ANKLE_PITCH_L" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J05_ANKLE_ROLL_L" joint="J05_ANKLE_ROLL_L" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J06_HIP_PITCH_R" joint="J06_HIP_PITCH_R" gear="1" ctrllimited="true" ctrlrange="-415 415" />
+        <motor name="motor_J07_HIP_ROLL_R" joint="J07_HIP_ROLL_R" gear="1" ctrllimited="true" ctrlrange="-370 370" />
+        <motor name="motor_J08_HIP_YAW_R" joint="J08_HIP_YAW_R" gear="1" ctrllimited="true" ctrlrange="-222 222" />
+        <motor name="motor_J09_KNEE_PITCH_R" joint="J09_KNEE_PITCH_R" gear="1" ctrllimited="true" ctrlrange="-415 415" />
+        <motor name="motor_J10_ANKLE_PITCH_R" joint="J10_ANKLE_PITCH_R" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J11_ANKLE_ROLL_R" joint="J11_ANKLE_ROLL_R" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+
+        <motor name="motor_J12_TORSO_YAW" joint="J12_TORSO_YAW" gear="1" ctrllimited="true" ctrlrange="-222 222" />
+
+        <motor name="motor_J13_SHOULDER_PITCH_L" joint="J13_SHOULDER_PITCH_L" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J14_SHOULDER_ROLL_L" joint="J14_SHOULDER_ROLL_L" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J15_SHOULDER_YAW_L" joint="J15_SHOULDER_YAW_L" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J16_ELBOW_PITCH_L" joint="J16_ELBOW_PITCH_L" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J17_ELBOW_YAW_L" joint="J17_ELBOW_YAW_L" gear="1" ctrllimited="true" ctrlrange="-52 52" />
+        <motor name="motor_J18_WRIST_PITCH_L" joint="J18_WRIST_PITCH_L" gear="1" ctrllimited="true" ctrlrange="-5 5" />
+        <motor name="motor_J19_WRIST_ROLL_L" joint="J19_WRIST_ROLL_L" gear="1" ctrllimited="true" ctrlrange="-5 5" />
+
+        <motor name="motor_J20_THUMB_BASE_L" joint="J20_THUMB_BASE_L" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+        <motor name="motor_J21_THUMB_MID_L" joint="J21_THUMB_MID_L" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+        <motor name="motor_J22_THUMB_TIP_L" joint="J22_THUMB_TIP_L" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+        <motor name="motor_J23_INDEX_BASE_L" joint="J23_INDEX_BASE_L" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+        <motor name="motor_J24_INDEX_TIP_L" joint="J24_INDEX_TIP_L" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+        <motor name="motor_J25_MIDDLE_BASE_L" joint="J25_MIDDLE_BASE_L" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+        <motor name="motor_J26_MIDDLE_TIP_L" joint="J26_MIDDLE_TIP_L" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+
+        <motor name="motor_J27_SHOULDER_PITCH_R" joint="J27_SHOULDER_PITCH_R" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J28_SHOULDER_ROLL_R" joint="J28_SHOULDER_ROLL_R" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J29_SHOULDER_YAW_R" joint="J29_SHOULDER_YAW_R" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J30_ELBOW_PITCH_R" joint="J30_ELBOW_PITCH_R" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J31_ELBOW_YAW_R" joint="J31_ELBOW_YAW_R" gear="1" ctrllimited="true" ctrlrange="-52 52" />
+        <motor name="motor_J32_WRIST_PITCH_R" joint="J32_WRIST_PITCH_R" gear="1" ctrllimited="true" ctrlrange="-5 5" />
+        <motor name="motor_J33_WRIST_ROLL_R" joint="J33_WRIST_ROLL_R" gear="1" ctrllimited="true" ctrlrange="-5 5" />
+
+        <motor name="motor_J34_THUMB_BASE_R" joint="J34_THUMB_BASE_R" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+        <motor name="motor_J35_THUMB_MID_R" joint="J35_THUMB_MID_R" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+        <motor name="motor_J36_THUMB_TIP_R" joint="J36_THUMB_TIP_R" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+        <motor name="motor_J37_INDEX_BASE_R" joint="J37_INDEX_BASE_R" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+        <motor name="motor_J38_INDEX_TIP_R" joint="J38_INDEX_TIP_R" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+        <motor name="motor_J39_MIDDLE_BASE_R" joint="J39_MIDDLE_BASE_R" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+        <motor name="motor_J40_MIDDLE_TIP_R" joint="J40_MIDDLE_TIP_R" gear="1" ctrllimited="true" ctrlrange="-1.1 1.1" />
+
+        <motor name="motor_J41_HEAD_PITCH" joint="J41_HEAD_PITCH" gear="1" ctrllimited="true" ctrlrange="-52 52" />
+        <motor name="motor_J42_HEAD_YAW" joint="J42_HEAD_YAW" gear="1" ctrllimited="true" ctrlrange="-52 52" />
+
+    </actuator>
+
+</mujoco>
