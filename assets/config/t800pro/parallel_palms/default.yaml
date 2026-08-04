@@ -1,0 +1,39 @@
+# Parameters for the parallel ankle
+# euler_bias: unit degree
+# joint_bias: unit degree
+sample:
+  point_o: [0, 0, 0]
+  point_a1: [19.75, -4.3, 124.5]
+  point_a2: [-19.75, -4.3, 124.5]
+  point_b1: [18.5, -10.5, 0]
+  point_b2: [-18.5, -10.5, 0]
+  euler_bias: [0, 0, 0]
+  linear_bias: [0, 0]
+  asymmetric: false
+
+left:
+  point_o: [0, 0, 0]
+  point_a1: [19.75, -4.3, 124.5]
+  point_a2: [-19.75, -4.3, 124.5]
+  point_b1: [18.5, -10.5, 0]
+  point_b2: [-18.5, -10.5, 0]
+  euler_bias: [0, 0, 0]
+  linear_bias: [124.661, 124.661]
+  asymmetric: false
+
+right:
+  point_o: [0, 0, 0]
+  point_a1: [19.75, 4.3, 124.5]
+  point_a2: [-19.75, 4.3, 124.5]
+  point_b1: [18.5, 10.5, 0]
+  point_b2: [-18.5, 10.5, 0]
+  euler_bias: [0, 0, 0]
+  linear_bias: [124.661, 124.661]
+  asymmetric: true
+
+policy_file: "parallel_palms/policies/forward_net.mnn"
+num_observations: 2
+num_actions: 2
+type: t800pro
+use_pitch_roll_ik: true
+flip_forward_y: true

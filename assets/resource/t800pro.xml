@@ -1,0 +1,4 @@
+<mujoco model="global_model">
+  <include file="robot/t800pro/xml/serial_t800pro.xml"/>
+  <include file="environment/ground.xml"/>
+</mujoco>

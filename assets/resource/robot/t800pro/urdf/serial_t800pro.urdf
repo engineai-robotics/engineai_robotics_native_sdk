@@ -1,0 +1,1136 @@
+<?xml version="1.0"?>
+<robot name="t800pro">
+
+    <link name="LINK_BASE">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_BASE.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="-0.02 0 0.014524" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.1" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0013388 0.0000351 0.0360387" rpy="0 0 0" />
+        <mass value="9.6010951" />
+        <inertia ixx="0.0525377" ixy="-0.000268" ixz="-0.0003155" iyy="0.0333295" iyz="-0.0000287" izz="0.0334065" />
+      </inertial>
+    </link>
+
+    <link name="LINK_HIP_PITCH_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_HIP_PITCH_L.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.003284 0.041416 -0.107329" rpy="0 -1.5707963 0" />
+        <geometry>
+          <cylinder radius="0.06" length="0.15" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0098348 0.0383312 -0.0947205" rpy="0 0 0" />
+        <mass value="3.4625143" />
+        <inertia ixx="0.0078922" ixy="-0.0001048" ixz="0.0005782" iyy="0.0086242" iyz="0.0005442" izz="0.0046768" />
+      </inertial>
+    </link>
+
+    <link name="LINK_HIP_ROLL_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_HIP_ROLL_L.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0381028 0.0001842 -0.0434432" rpy="0 0 0" />
+        <mass value="0.967965" />
+        <inertia ixx="0.0029886" ixy="0.0000085" ixz="-0.000699" iyy="0.0029989" iyz="0.0000056" izz="0.0022627" />
+      </inertial>
+    </link>
+
+    <link name="LINK_HIP_YAW_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_HIP_YAW_L.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.000088 0.000511 -0.098474" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.08" length="0.2" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0204121 0.004978 -0.1839359" rpy="0 0 0" />
+        <mass value="6.4807794" />
+        <inertia ixx="0.0942464" ixy="0.0000272" ixz="-0.0133387" iyy="0.0973837" iyz="0.0005662" izz="0.0106791" />
+      </inertial>
+    </link>
+
+    <link name="LINK_KNEE_PITCH_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_KNEE_PITCH_L.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.006765 0 -0.005743" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.085" />
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="-0.015866 0.000177 -0.251636" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.075" length="0.3" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0196837 0.0011826 -0.2139105" rpy="0 0 0" />
+        <mass value="6.2345254" />
+        <inertia ixx="0.0904393" ixy="-0.000069" ixz="-0.0036548" iyy="0.0906126" iyz="-0.0007538" izz="0.0132167" />
+      </inertial>
+    </link>
+
+    <link name="LINK_ANKLE_PITCH_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_ANKLE_PITCH_L.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="-0.0000368 0 -0.0088703" rpy="0 0 0" />
+        <mass value="0.1442214" />
+        <inertia ixx="0.0000678" ixy="0" ixz="0.0000009" iyy="0.0000849" iyz="0" izz="0.0000383" />
+      </inertial>
+    </link>
+
+    <link name="LINK_ANKLE_ROLL_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_ANKLE_ROLL_L.dae" />
+        </geometry>
+      </visual>
+      <collision name="LINK_ANKLE_ROLL_L_geom_1">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_ANKLE_ROLL_L.dae" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0007647 -0.0013492 -0.020984" rpy="0 0 0" />
+        <mass value="1.5234891" />
+        <inertia ixx="0.0021461" ixy="0.0001123" ixz="0.0010036" iyy="0.0066936" iyz="-0.000018" izz="0.0063199" />
+      </inertial>
+    </link>
+
+    <link name="LINK_FOOT_L">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="1e-3" />
+        <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+      </inertial>
+    </link>
+
+    <link name="LINK_HIP_PITCH_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_HIP_PITCH_R.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0032842 -0.0414164 -0.1073289" rpy="0 -1.5707963 0" />
+        <geometry>
+          <cylinder radius="0.06" length="0.15" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0098348 -0.0383312 -0.0947205" rpy="0 0 0" />
+        <mass value="3.4625143" />
+        <inertia ixx="0.0078922" ixy="0.0001048" ixz="0.0005782" iyy="0.0086242" iyz="-0.0005442" izz="0.0046768" />
+      </inertial>
+    </link>
+
+    <link name="LINK_HIP_ROLL_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_HIP_ROLL_R.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0381028 -0.0001842 -0.0434432" rpy="0 0 0" />
+        <mass value="0.967965" />
+        <inertia ixx="0.0029886" ixy="-0.0000085" ixz="-0.000699" iyy="0.0029989" iyz="-0.0000056" izz="0.0022627" />
+      </inertial>
+    </link>
+
+    <link name="LINK_HIP_YAW_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_HIP_YAW_R.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0000884 -0.0005113 -0.0984738" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.08" length="0.2" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0204121 -0.004978 -0.1839359" rpy="0 0 0" />
+        <mass value="6.4807794" />
+        <inertia ixx="0.0942464" ixy="-0.0000272" ixz="-0.0133387" iyy="0.0973837" iyz="-0.0005662" izz="0.0106791" />
+      </inertial>
+    </link>
+
+    <link name="LINK_KNEE_PITCH_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_KNEE_PITCH_R.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0067655 0 -0.0057426" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.085" />
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="-0.0158661 0.000177 -0.2516356" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.075" length="0.3" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0196837 -0.0011826 -0.2139105" rpy="0 0 0" />
+        <mass value="6.2345254" />
+        <inertia ixx="0.0904393" ixy="0.000069" ixz="-0.0036548" iyy="0.0906126" iyz="0.0007538" izz="0.0132167" />
+      </inertial>
+    </link>
+
+    <link name="LINK_ANKLE_PITCH_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_ANKLE_PITCH_R.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="-0.0000368 0 -0.0088703" rpy="0 0 0" />
+        <mass value="0.1442214" />
+        <inertia ixx="0.0000678" ixy="0" ixz="0.0000009" iyy="0.0000849" iyz="0" izz="0.0000383" />
+      </inertial>
+    </link>
+
+    <link name="LINK_ANKLE_ROLL_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_ANKLE_ROLL_R.dae" />
+        </geometry>
+      </visual>
+      <collision name="LINK_ANKLE_ROLL_R_geom_1">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_ANKLE_ROLL_R.dae" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0007647 0.0013492 -0.020984" rpy="0 0 0" />
+        <mass value="1.5234891" />
+        <inertia ixx="0.0021461" ixy="-0.0001123" ixz="0.0010036" iyy="0.0066936" iyz="0.000018" izz="0.0063199" />
+      </inertial>
+    </link>
+
+    <link name="LINK_FOOT_R">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="1e-3" />
+        <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+      </inertial>
+    </link>
+
+    <link name="LINK_WAIST_YAW">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_TORSO_YAW.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="-0.0083431 0 0.2438351" rpy="0 0 0" />
+        <geometry>
+          <box size="0.24 0.29 0.25" />
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="-0.0051799 0.001274 0.0623352" rpy="0 0 0" />
+        <geometry>
+          <box size="0.22 0.2 0.1" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0111503 -0.000791 0.2276308" rpy="0 0 0" />
+        <mass value="19.3335435" />
+        <inertia ixx="0.2671415" ixy="-0.0000987" ixz="0.006881" iyy="0.2114411" iyz="0.0003179" izz="0.1691651" />
+      </inertial>
+    </link>
+
+    <link name="LINK_SHOULDER_PITCH_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_SHOULDER_PITCH_L.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="-0.0090639 0.0526849 -0.012179" rpy="0 0 0" />
+        <mass value="1.7493721" />
+        <inertia ixx="0.0033247" ixy="0.0001454" ixz="-0.0000393" iyy="0.0021641" iyz="0.0003048" izz="0.002742" />
+      </inertial>
+    </link>
+
+    <link name="LINK_SHOULDER_ROLL_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_SHOULDER_ROLL_L.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.065" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0096206 0.004525 -0.0284205" rpy="0 0 0" />
+        <mass value="0.6224869" />
+        <inertia ixx="0.0014151" ixy="-0.0000147" ixz="0.0001018" iyy="0.0019063" iyz="0.0000967" izz="0.0012472" />
+      </inertial>
+    </link>
+
+    <link name="LINK_SHOULDER_YAW_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_SHOULDER_YAW_L.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="-0.000787 0.003995 -0.038378" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.05" length="0.09" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0001229 0.0028058 -0.0886134" rpy="0 0 0" />
+        <mass value="2.4408053" />
+        <inertia ixx="0.0112762" ixy="0.0000033" ixz="0.000051" iyy="0.0117665" iyz="0.0002767" izz="0.0025862" />
+      </inertial>
+    </link>
+
+    <link name="LINK_ELBOW_PITCH_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_ELBOW_PITCH_L.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.06" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0091902 0.0003287 -0.0711953" rpy="0 0 0" />
+        <mass value="1.245428" />
+        <inertia ixx="0.0033867" ixy="0.000038" ixz="-0.0000804" iyy="0.0032131" iyz="0.000412" izz="0.0014075" />
+      </inertial>
+    </link>
+
+    <link name="LINK_ELBOW_YAW_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_ELBOW_YAW_L.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.003284 0.002024 -0.047775" rpy="0.0489502 -0.245118 0" />
+        <geometry>
+          <cylinder radius="0.045" length="0.15" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0125571 0.0067102 -0.0586872" rpy="0 0 0" />
+        <mass value="1.0325057" />
+        <inertia ixx="0.0021904" ixy="-0.0000345" ixz="0.0002984" iyy="0.0023751" iyz="0.0001458" izz="0.000865" />
+      </inertial>
+    </link>
+
+    <link name="LINK_WRIST_PITCH_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_WRIST_PITCH_L.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0007808 -0.0005527 -0.0028189" rpy="0 0 0" />
+        <mass value="0.0797618" />
+        <inertia ixx="0.0000143" ixy="0.0000003" ixz="0.0000001" iyy="0.0000075" iyz="-0.000002" izz="0.0000136" />
+      </inertial>
+    </link>
+
+    <link name="LINK_WRIST_ROLL_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_WRIST_ROLL_L.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.049591" rpy="0 -0.262432 0" />
+        <geometry>
+          <sphere radius="0.05" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0103543 -0.0012991 -0.0689484" rpy="0 0 0" />
+        <mass value="0.2590047" />
+        <inertia ixx="0.0002232" ixy="-0.0000057" ixz="0.0000503" iyy="0.000323" iyz="0.0000101" izz="0.0001479" />
+      </inertial>
+    </link>
+
+    <link name="LINK_THUMB_BASE_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_THUMB_BASE_L.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0057839 0.0005845 -0.0020926" rpy="0 0 0" />
+        <mass value="0.120801" />
+        <inertia ixx="0.0000292" ixy="0.0000007" ixz="-0.0000034" iyy="0.000042" iyz="0.0000008" izz="0.0000335" />
+      </inertial>
+    </link>
+
+    <link name="LINK_THUMB_MID_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_THUMB_MID_L.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0138732 -0.0001589 0.0037788" rpy="0 0 0" />
+        <mass value="0.0998978" />
+        <inertia ixx="0.0000083" ixy="-0.0000002" ixz="-0.000004" iyy="0.0000271" iyz="-0.0000001" izz="0.0000264" />
+      </inertial>
+    </link>
+
+    <link name="LINK_THUMB_TIP_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_THUMB_TIP_L.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0183223 -0.0013561 0.0050551" rpy="0 0 0" />
+        <mass value="0.0276245" />
+        <inertia ixx="0.0000033" ixy="-0.0000006" ixz="-0.0000008" iyy="0.0000073" iyz="-0.0000002" izz="0.0000081" />
+      </inertial>
+    </link>
+
+    <link name="LINK_INDEX_BASE_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_INDEX_BASE_L.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0055254 0.0012293 -0.0262149" rpy="0 0 0" />
+        <mass value="0.0753739" />
+        <inertia ixx="0.0000235" ixy="0.0000002" ixz="0.0000039" iyy="0.0000262" iyz="-0.0000003" izz="0.0000099" />
+      </inertial>
+    </link>
+
+    <link name="LINK_INDEX_TIP_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_INDEX_TIP_L.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0017044 0.0024912 -0.0162507" rpy="0 0 0" />
+        <mass value="0.0322173" />
+        <inertia ixx="0.0000081" ixy="-0.0000001" ixz="0.0000006" iyy="0.0000096" iyz="0.0000005" izz="0.0000038" />
+      </inertial>
+    </link>
+
+    <link name="LINK_MIDDLE_BASE_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_MIDDLE_BASE_L.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0055251 0.0012293 -0.0262149" rpy="0 0 0" />
+        <mass value="0.0753739" />
+        <inertia ixx="0.0000235" ixy="0.0000002" ixz="0.0000039" iyy="0.0000262" iyz="-0.0000003" izz="0.0000099" />
+      </inertial>
+    </link>
+
+    <link name="LINK_MIDDLE_TIP_L">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_MIDDLE_TIP_L.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0041609 0.0025034 -0.0156521" rpy="0 0 0" />
+        <mass value="0.0322698" />
+        <inertia ixx="0.0000078" ixy="-0.0000001" ixz="0.0000014" iyy="0.0000097" iyz="0.0000005" izz="0.0000042" />
+      </inertial>
+    </link>
+
+    <link name="LINK_SHOULDER_PITCH_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_SHOULDER_PITCH_R.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="-0.0090639 -0.0526849 -0.012179" rpy="0 0 0" />
+        <mass value="1.7493721" />
+        <inertia ixx="0.0033247" ixy="-0.0001454" ixz="-0.0000393" iyy="0.0021641" iyz="-0.0003048" izz="0.002742" />
+      </inertial>
+    </link>
+
+    <link name="LINK_SHOULDER_ROLL_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_SHOULDER_ROLL_R.dae" />
+        </geometry>
+      </visual>
+      <collision name="LINK_SHOULDER_ROLL_R_geom_1">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.065" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0096206 -0.004525 -0.0284205" rpy="0 0 0" />
+        <mass value="0.6224869" />
+        <inertia ixx="0.0014151" ixy="0.0000147" ixz="0.0001018" iyy="0.0019063" iyz="-0.0000967" izz="0.0012472" />
+      </inertial>
+    </link>
+
+    <link name="LINK_SHOULDER_YAW_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_SHOULDER_YAW_R.dae" />
+        </geometry>
+      </visual>
+      <collision name="LINK_SHOULDER_YAW_R_geom_1">
+        <origin xyz="-0.0007867 -0.003995 -0.038378" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.05" length="0.09" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0001229 -0.0028058 -0.0886134" rpy="0 0 0" />
+        <mass value="2.4408053" />
+        <inertia ixx="0.0112762" ixy="-0.0000033" ixz="0.000051" iyy="0.0117665" iyz="-0.0002767" izz="0.0025862" />
+      </inertial>
+    </link>
+
+    <link name="LINK_ELBOW_PITCH_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_ELBOW_PITCH_R.dae" />
+        </geometry>
+      </visual>
+      <collision name="LINK_ELBOW_PITCH_R_geom_1">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.06" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0091902 -0.0003287 -0.0711953" rpy="0 0 0" />
+        <mass value="1.245428" />
+        <inertia ixx="0.0033867" ixy="-0.000038" ixz="-0.0000804" iyy="0.0032131" iyz="-0.000412" izz="0.0014075" />
+      </inertial>
+    </link>
+
+    <link name="LINK_ELBOW_YAW_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_ELBOW_YAW_R.dae" />
+        </geometry>
+      </visual>
+      <collision name="LINK_ELBOW_YAW_R_geom_1">
+        <origin xyz="0.0104949 -0.0020236 -0.0477752" rpy="-0.0489502 -0.245118 0.0000001" />
+        <geometry>
+          <cylinder radius="0.045" length="0.15" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0125571 -0.0067102 -0.0586872" rpy="0 0 0" />
+        <mass value="1.0325057" />
+        <inertia ixx="0.0021904" ixy="0.0000345" ixz="0.0002984" iyy="0.0023751" iyz="-0.0001458" izz="0.000865" />
+      </inertial>
+    </link>
+
+    <link name="LINK_WRIST_PITCH_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_WRIST_PITCH_R.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0007808 0.0005527 -0.0028189" rpy="0 0 0" />
+        <mass value="0.0797618" />
+        <inertia ixx="0.0000143" ixy="-0.0000003" ixz="0.0000001" iyy="0.0000075" iyz="0.000002" izz="0.0000136" />
+      </inertial>
+    </link>
+
+    <link name="LINK_WRIST_ROLL_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_WRIST_ROLL_R.dae" />
+        </geometry>
+      </visual>
+      <collision name="LINK_WRIST_ROLL_R_geom_1">
+        <origin xyz="0 0 -0.0495907" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.05" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0103543 0.0012991 -0.0689484" rpy="0 0 0" />
+        <mass value="0.2590047" />
+        <inertia ixx="0.0002232" ixy="0.0000057" ixz="0.0000503" iyy="0.000323" iyz="-0.0000101" izz="0.0001479" />
+      </inertial>
+    </link>
+
+    <link name="LINK_THUMB_BASE_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_THUMB_BASE_R.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0057839 -0.0005845 -0.0020926" rpy="0 0 0" />
+        <mass value="0.120801" />
+        <inertia ixx="0.0000292" ixy="-0.0000007" ixz="-0.0000034" iyy="0.000042" iyz="-0.0000008" izz="0.0000335" />
+      </inertial>
+    </link>
+
+    <link name="LINK_THUMB_MID_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_THUMB_MID_R.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0138732 0.0001589 0.0037788" rpy="0 0 0" />
+        <mass value="0.0998978" />
+        <inertia ixx="0.0000083" ixy="0.0000002" ixz="-0.000004" iyy="0.0000271" iyz="0.0000001" izz="0.0000264" />
+      </inertial>
+    </link>
+
+    <link name="LINK_THUMB_TIP_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_THUMB_TIP_R.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0183223 0.0013561 0.0050551" rpy="0 0 0" />
+        <mass value="0.0276245" />
+        <inertia ixx="0.0000033" ixy="0.0000006" ixz="-0.0000008" iyy="0.0000073" iyz="0.0000002" izz="0.0000081" />
+      </inertial>
+    </link>
+
+    <link name="LINK_INDEX_BASE_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_INDEX_BASE_R.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0055254 -0.0012293 -0.0262149" rpy="0 0 0" />
+        <mass value="0.0753739" />
+        <inertia ixx="0.0000235" ixy="-0.0000002" ixz="0.0000039" iyy="0.0000262" iyz="0.0000003" izz="0.0000099" />
+      </inertial>
+    </link>
+
+    <link name="LINK_INDEX_TIP_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_INDEX_TIP_R.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0017044 -0.0024912 -0.0162507" rpy="0 0 0" />
+        <mass value="0.0322173" />
+        <inertia ixx="0.0000081" ixy="0.0000001" ixz="0.0000006" iyy="0.0000096" iyz="-0.0000005" izz="0.0000038" />
+      </inertial>
+    </link>
+
+    <link name="LINK_MIDDLE_BASE_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_MIDDLE_BASE_R.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0055251 -0.0012293 -0.0262149" rpy="0 0 0" />
+        <mass value="0.0753739" />
+        <inertia ixx="0.0000235" ixy="-0.0000002" ixz="0.0000039" iyy="0.0000262" iyz="0.0000003" izz="0.0000099" />
+      </inertial>
+    </link>
+
+    <link name="LINK_MIDDLE_TIP_R">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_MIDDLE_TIP_R.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0041609 -0.0025034 -0.0156521" rpy="0 0 0" />
+        <mass value="0.0322698" />
+        <inertia ixx="0.0000078" ixy="0.0000001" ixz="0.0000014" iyy="0.0000097" iyz="-0.0000005" izz="0.0000042" />
+      </inertial>
+    </link>
+
+    <link name="LINK_HEAD_PITCH">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_HEAD_PITCH.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0.0036925 0.0000821 0.0489158" rpy="0 0 0" />
+        <mass value="0.9894784" />
+        <inertia ixx="0.0022167" ixy="0.0000005" ixz="0.0005052" iyy="0.0025192" iyz="-0.0000153" izz="0.0015897" />
+      </inertial>
+    </link>
+
+    <link name="LINK_HEAD_YAW">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="meshes/LINK_HEAD_YAW.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0200123 0 0.084856" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.1" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0284863 0.0000417 0.0858035" rpy="0 0 0" />
+        <mass value="1.8880708" />
+        <inertia ixx="0.0081173" ixy="-0.0000041" ixz="0.0015" iyy="0.010487" iyz="-0.0000076" izz="0.0085738" />
+      </inertial>
+    </link>
+
+  <joint name="J00_HIP_PITCH_L" type="revolute">
+    <parent link="LINK_BASE" />
+    <child link="LINK_HIP_PITCH_L" />
+    <origin xyz="0 0.0791811 0.003934" rpy="0 0 0" />
+    <axis xyz="0 0.9659258 -0.258819" />
+    <limit lower="-2.879" upper="2.181" effort="415" velocity="25.96" />
+  </joint>
+
+  <joint name="J01_HIP_ROLL_L" type="revolute">
+    <parent link="LINK_HIP_PITCH_L" />
+    <child link="LINK_HIP_ROLL_L" />
+    <origin xyz="0.0046468 0.0403267 -0.1075171" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.2618" upper="1.7444" effort="370" velocity="25.31" />
+  </joint>
+
+  <joint name="J02_HIP_YAW_L" type="revolute">
+    <parent link="LINK_HIP_ROLL_L" />
+    <child link="LINK_HIP_YAW_L" />
+    <origin xyz="0.0095706 0 -0.0805123" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.4137" upper="3.8921" effort="222" velocity="23.19" />
+  </joint>
+
+  <joint name="J03_KNEE_PITCH_L" type="revolute">
+    <parent link="LINK_HIP_YAW_L" />
+    <child link="LINK_KNEE_PITCH_L" />
+    <origin xyz="-0.0378129 -0.0000493 -0.2879317" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.261667" upper="2.355" effort="415" velocity="25.96" />
+  </joint>
+
+  <joint name="J04_ANKLE_PITCH_L" type="revolute">
+    <parent link="LINK_KNEE_PITCH_L" />
+    <child link="LINK_ANKLE_PITCH_L" />
+    <origin xyz="-0.0027136 0 -0.4385989" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.68068" upper="0.68068" effort="160" velocity="33.51" />
+  </joint>
+
+  <joint name="J05_ANKLE_ROLL_L" type="revolute">
+    <parent link="LINK_ANKLE_PITCH_L" />
+    <child link="LINK_ANKLE_ROLL_L" />
+    <origin xyz="0.0011073 0 -0.0379282" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.3491" upper="0.1745" effort="160" velocity="33.51" />
+  </joint>
+
+  <joint name="J_FIXED_FOOT_L" type="fixed">
+    <parent link="LINK_ANKLE_ROLL_L" />
+    <child link="LINK_FOOT_L" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="J06_HIP_PITCH_R" type="revolute">
+    <parent link="LINK_BASE" />
+    <child link="LINK_HIP_PITCH_R" />
+    <origin xyz="0 -0.0791811 0.003934" rpy="0 0 0" />
+    <axis xyz="0 0.9659258 0.258819" />
+    <limit lower="-2.879" upper="2.181" effort="415" velocity="25.96" />
+  </joint>
+
+  <joint name="J07_HIP_ROLL_R" type="revolute">
+    <parent link="LINK_HIP_PITCH_R" />
+    <child link="LINK_HIP_ROLL_R" />
+    <origin xyz="0.0046468 -0.0403267 -0.1075171" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-1.7444" upper="0.2618" effort="370" velocity="25.31" />
+  </joint>
+
+  <joint name="J08_HIP_YAW_R" type="revolute">
+    <parent link="LINK_HIP_ROLL_R" />
+    <child link="LINK_HIP_YAW_R" />
+    <origin xyz="0.0095706 0 -0.0805123" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.8921" upper="1.4137" effort="222" velocity="23.19" />
+  </joint>
+
+  <joint name="J09_KNEE_PITCH_R" type="revolute">
+    <parent link="LINK_HIP_YAW_R" />
+    <child link="LINK_KNEE_PITCH_R" />
+    <origin xyz="-0.0378129 0.0000493 -0.2879317" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.261667" upper="2.355" effort="415" velocity="25.96" />
+  </joint>
+
+  <joint name="J10_ANKLE_PITCH_R" type="revolute">
+    <parent link="LINK_KNEE_PITCH_R" />
+    <child link="LINK_ANKLE_PITCH_R" />
+    <origin xyz="-0.0027136 0 -0.4385989" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.68068" upper="0.68068" effort="160" velocity="33.51" />
+  </joint>
+
+  <joint name="J11_ANKLE_ROLL_R" type="revolute">
+    <parent link="LINK_ANKLE_PITCH_R" />
+    <child link="LINK_ANKLE_ROLL_R" />
+    <origin xyz="0.0011073 0 -0.0379282" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.1745" upper="0.3491" effort="160" velocity="33.51" />
+  </joint>
+
+  <joint name="J_FIXED_FOOT_R" type="fixed">
+    <parent link="LINK_ANKLE_ROLL_R" />
+    <child link="LINK_FOOT_R" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="J12_TORSO_YAW" type="revolute">
+    <parent link="LINK_BASE" />
+    <child link="LINK_WAIST_YAW" />
+    <origin xyz="0 0 0.1069647" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.81" upper="2.81" effort="222" velocity="23.19" />
+  </joint>
+
+  <joint name="J13_SHOULDER_PITCH_L" type="revolute">
+    <parent link="LINK_WAIST_YAW" />
+    <child link="LINK_SHOULDER_PITCH_L" />
+    <origin xyz="-0.011 0.1628476 0.2796846" rpy="0 0 0" />
+    <axis xyz="0 0.9967789 0.0801989" />
+    <limit lower="-3.229" upper="2.443" effort="160" velocity="33.51" />
+  </joint>
+
+  <joint name="J14_SHOULDER_ROLL_L" type="revolute">
+    <parent link="LINK_SHOULDER_PITCH_L" />
+    <child link="LINK_SHOULDER_ROLL_L" />
+    <origin xyz="0 0.062716 -0.01544" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.384" upper="2.487" effort="160" velocity="33.51" />
+  </joint>
+
+  <joint name="J15_SHOULDER_YAW_L" type="revolute">
+    <parent link="LINK_SHOULDER_ROLL_L" />
+    <child link="LINK_SHOULDER_YAW_L" />
+    <origin xyz="0.000035 0.0085246 -0.082712" rpy="0 0 0" />
+    <axis xyz="0 -0.0714974 0.9974408" />
+    <limit lower="-2.618" upper="2.618" effort="160" velocity="33.51" />
+  </joint>
+
+  <joint name="J16_ELBOW_PITCH_L" type="revolute">
+    <parent link="LINK_SHOULDER_YAW_L" />
+    <child link="LINK_ELBOW_PITCH_L" />
+    <origin xyz="0.0018418 0.0135916 -0.1507221" rpy="0 0 0" />
+    <axis xyz="0 0.9974408 0.0714974" />
+    <limit lower="-2.295" upper="0.288" effort="160" velocity="33.51" />
+  </joint>
+
+  <joint name="J17_ELBOW_YAW_L" type="revolute">
+    <parent link="LINK_ELBOW_PITCH_L" />
+    <child link="LINK_ELBOW_YAW_L" />
+    <origin xyz="-0.002164 0.0094625 -0.13202" rpy="0 0 0" />
+    <axis xyz="-0.21644 -0.069803 0.9738" />
+    <limit lower="-2.618" upper="2.618" effort="52" velocity="35.2" />
+  </joint>
+
+  <joint name="J18_WRIST_PITCH_L" type="revolute">
+    <parent link="LINK_ELBOW_YAW_L" />
+    <child link="LINK_WRIST_PITCH_L" />
+    <origin xyz="0.030857 0.010504 -0.13955" rpy="0 0 0" />
+    <axis xyz="0 0.99744 0.071497" />
+    <limit lower="-0.436" upper="0.436" effort="5" velocity="1" />
+  </joint>
+
+  <joint name="J19_WRIST_ROLL_L" type="revolute">
+    <parent link="LINK_WRIST_PITCH_L" />
+    <child link="LINK_WRIST_ROLL_L" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0.9763 -0.015475 0.21589" />
+    <limit lower="-1.047" upper="0.611" effort="5" velocity="1" />
+  </joint>
+
+  <joint name="J20_THUMB_BASE_L" type="revolute">
+    <parent link="LINK_WRIST_ROLL_L" />
+    <child link="LINK_THUMB_BASE_L" />
+    <origin xyz="0.027092 -0.0036291 -0.044807" rpy="0 0 0" />
+    <axis xyz="-0.216 -0.0059881 0.97638" />
+    <limit lower="-2.007" upper="0" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J21_THUMB_MID_L" type="revolute">
+    <parent link="LINK_THUMB_BASE_L" />
+    <child link="LINK_THUMB_MID_L" />
+    <origin xyz="0.032401 -0.0006589 0.0072837" rpy="0 0 0" />
+    <axis xyz="0.013817 0.99986 0.0091887" />
+    <limit lower="0" upper="1.5708" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J22_THUMB_TIP_L" type="revolute">
+    <parent link="LINK_THUMB_MID_L" />
+    <child link="LINK_THUMB_TIP_L" />
+    <origin xyz="0.028313 -0.0004202 0.0062609" rpy="0 0 0" />
+    <axis xyz="0.013817 0.99986 0.0091887" />
+    <limit lower="0" upper="1.5708" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J23_INDEX_BASE_L" type="revolute">
+    <parent link="LINK_WRIST_ROLL_L" />
+    <child link="LINK_INDEX_BASE_L" />
+    <origin xyz="0.037772 -0.0033483 -0.091423" rpy="0 0 0" />
+    <axis xyz="0.9763 -0.015475 0.21589" />
+    <limit lower="-1.6929" upper="0" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J24_INDEX_TIP_L" type="revolute">
+    <parent link="LINK_INDEX_BASE_L" />
+    <child link="LINK_INDEX_TIP_L" />
+    <origin xyz="0.0086389 0.0002395 -0.039055" rpy="0 0 0" />
+    <axis xyz="0.9763 -0.015475 0.21589" />
+    <limit lower="-1.85" upper="0" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J25_MIDDLE_BASE_L" type="revolute">
+    <parent link="LINK_WRIST_ROLL_L" />
+    <child link="LINK_MIDDLE_BASE_L" />
+    <origin xyz="0.0036017 -0.0028067 -0.098979" rpy="0 0 0" />
+    <axis xyz="0.9763 -0.015475 0.21589" />
+    <limit lower="-1.6929" upper="0" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J26_MIDDLE_TIP_L" type="revolute">
+    <parent link="LINK_MIDDLE_BASE_L" />
+    <child link="LINK_MIDDLE_TIP_L" />
+    <origin xyz="0.0086373 0.0002396 -0.039056" rpy="0 0 0" />
+    <axis xyz="0.9763 -0.015475 0.21589" />
+    <limit lower="-1.85" upper="0" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J27_SHOULDER_PITCH_R" type="revolute">
+    <parent link="LINK_WAIST_YAW" />
+    <child link="LINK_SHOULDER_PITCH_R" />
+    <origin xyz="-0.011 -0.1628476 0.2796846" rpy="0 0 0" />
+    <axis xyz="0 0.9967789 -0.0801989" />
+    <limit lower="-3.229" upper="2.443" effort="160" velocity="33.51" />
+  </joint>
+
+  <joint name="J28_SHOULDER_ROLL_R" type="revolute">
+    <parent link="LINK_SHOULDER_PITCH_R" />
+    <child link="LINK_SHOULDER_ROLL_R" />
+    <origin xyz="0 -0.062716 -0.01544" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-2.487" upper="0.384" effort="160" velocity="33.51" />
+  </joint>
+
+  <joint name="J29_SHOULDER_YAW_R" type="revolute">
+    <parent link="LINK_SHOULDER_ROLL_R" />
+    <child link="LINK_SHOULDER_YAW_R" />
+    <origin xyz="0.000035 -0.0085246 -0.082712" rpy="0 0 0" />
+    <axis xyz="0 0.0714974 0.9974408" />
+    <limit lower="-2.618" upper="2.618" effort="160" velocity="33.51" />
+  </joint>
+
+  <joint name="J30_ELBOW_PITCH_R" type="revolute">
+    <parent link="LINK_SHOULDER_YAW_R" />
+    <child link="LINK_ELBOW_PITCH_R" />
+    <origin xyz="0.0018418 -0.0135916 -0.1507221" rpy="0 0 0" />
+    <axis xyz="0 0.9974408 -0.0714974" />
+    <limit lower="-2.295" upper="0.288" effort="160" velocity="33.51" />
+  </joint>
+
+  <joint name="J31_ELBOW_YAW_R" type="revolute">
+    <parent link="LINK_ELBOW_PITCH_R" />
+    <child link="LINK_ELBOW_YAW_R" />
+    <origin xyz="-0.002164 -0.0094625 -0.13202" rpy="0 0 0" />
+    <axis xyz="-0.21644 0.069803 0.9738" />
+    <limit lower="-2.618" upper="2.618" effort="52" velocity="35.2" />
+  </joint>
+
+  <joint name="J32_WRIST_PITCH_R" type="revolute">
+    <parent link="LINK_ELBOW_YAW_R" />
+    <child link="LINK_WRIST_PITCH_R" />
+    <origin xyz="0.030857 -0.010504 -0.13955" rpy="0 0 0" />
+    <axis xyz="0 0.99744 -0.071497" />
+    <limit lower="-0.436" upper="0.436" effort="5" velocity="1" />
+  </joint>
+
+  <joint name="J33_WRIST_ROLL_R" type="revolute">
+    <parent link="LINK_WRIST_PITCH_R" />
+    <child link="LINK_WRIST_ROLL_R" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0.9763 0.015475 0.21589" />
+    <limit lower="-0.611" upper="1.047" effort="5" velocity="1" />
+  </joint>
+
+  <joint name="J34_THUMB_BASE_R" type="revolute">
+    <parent link="LINK_WRIST_ROLL_R" />
+    <child link="LINK_THUMB_BASE_R" />
+    <origin xyz="0.027092 0.0036291 -0.044807" rpy="0 0 0" />
+    <axis xyz="-0.216 0.0059881 0.97638" />
+    <limit lower="0" upper="2.007" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J35_THUMB_MID_R" type="revolute">
+    <parent link="LINK_THUMB_BASE_R" />
+    <child link="LINK_THUMB_MID_R" />
+    <origin xyz="0.032401 0.0006589 0.0072837" rpy="0 0 0" />
+    <axis xyz="-0.013817 0.99986 -0.0091887" />
+    <limit lower="0" upper="1.5708" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J36_THUMB_TIP_R" type="revolute">
+    <parent link="LINK_THUMB_MID_R" />
+    <child link="LINK_THUMB_TIP_R" />
+    <origin xyz="0.028313 0.0004202 0.0062609" rpy="0 0 0" />
+    <axis xyz="-0.013817 0.99986 -0.0091887" />
+    <limit lower="0" upper="1.5708" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J37_INDEX_BASE_R" type="revolute">
+    <parent link="LINK_WRIST_ROLL_R" />
+    <child link="LINK_INDEX_BASE_R" />
+    <origin xyz="0.037772 0.0033483 -0.091423" rpy="0 0 0" />
+    <axis xyz="0.9763 0.015475 0.21589" />
+    <limit lower="0" upper="1.6929" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J38_INDEX_TIP_R" type="revolute">
+    <parent link="LINK_INDEX_BASE_R" />
+    <child link="LINK_INDEX_TIP_R" />
+    <origin xyz="0.0086389 -0.0002395 -0.039055" rpy="0 0 0" />
+    <axis xyz="0.9763 0.015475 0.21589" />
+    <limit lower="0" upper="1.85" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J39_MIDDLE_BASE_R" type="revolute">
+    <parent link="LINK_WRIST_ROLL_R" />
+    <child link="LINK_MIDDLE_BASE_R" />
+    <origin xyz="0.0036017 0.0028067 -0.098979" rpy="0 0 0" />
+    <axis xyz="0.9763 0.015475 0.21589" />
+    <limit lower="0" upper="1.6929" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J40_MIDDLE_TIP_R" type="revolute">
+    <parent link="LINK_MIDDLE_BASE_R" />
+    <child link="LINK_MIDDLE_TIP_R" />
+    <origin xyz="0.0086373 -0.0002396 -0.039056" rpy="0 0 0" />
+    <axis xyz="0.9763 0.015475 0.21589" />
+    <limit lower="0" upper="1.85" effort="1.1" velocity="9" />
+  </joint>
+
+  <joint name="J41_HEAD_PITCH" type="revolute">
+    <parent link="LINK_WAIST_YAW" />
+    <child link="LINK_HEAD_PITCH" />
+    <origin xyz="-0.0113 0 0.3868533" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.523" upper="0.523" effort="52" velocity="35.2" />
+  </joint>
+
+  <joint name="J42_HEAD_YAW" type="revolute">
+    <parent link="LINK_HEAD_PITCH" />
+    <child link="LINK_HEAD_YAW" />
+    <origin xyz="0 0 0.0400713" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.222" upper="1.222" effort="52" velocity="35.2" />
+  </joint>
+
+</robot>
