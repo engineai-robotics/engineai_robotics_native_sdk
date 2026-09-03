@@ -126,6 +126,8 @@ class VirtualGamepadWidget(QWidget):
         # set predefined macro combinations
         self.macros = {
             "pd_stand: [LB, A]": ("LB", "A"),
+            "pd_stand_x: [LB, X]": ("LB", "X"),
+            "pd_stand_y: [LB, Y]": ("LB", "Y"),
             "passive: [LB, RB]": ("LB", "RB"),
             "walk: [LB, B]": ("LB", "B"),
             "dance: [RB, B]": ("RB", "B")

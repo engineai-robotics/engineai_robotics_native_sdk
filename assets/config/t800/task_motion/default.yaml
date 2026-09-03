@@ -22,6 +22,8 @@ tasks:
     manual_transition:
       - idle
       - pd_stand
+      - pd_stand_x
+      - pd_stand_y
       - supine_to_stance
     key: [LB, RB]
 
@@ -35,7 +37,37 @@ tasks:
       - passive
       - walk
       - dance
+      - pd_stand_x
+      - pd_stand_y
     key: [LB, A]
+
+  - motion: pd_stand_x
+    period: 0.002
+    runner:
+      - name: pd_stand_runner
+        enabled: true
+        param_tag: pd_stand_x
+    manual_transition:
+      - passive
+      - pd_stand
+      - pd_stand_y
+      - walk
+      - dance
+    key: [LB, X]
+
+  - motion: pd_stand_y
+    period: 0.002
+    runner:
+      - name: pd_stand_runner
+        enabled: true
+        param_tag: pd_stand_y
+    manual_transition:
+      - passive
+      - pd_stand
+      - pd_stand_x
+      - walk
+      - dance
+    key: [LB, Y]
 
   - motion: walk
     period: 0.01
@@ -46,6 +78,8 @@ tasks:
     manual_transition:
       - passive
       - pd_stand
+      - pd_stand_x
+      - pd_stand_y
       - stance_to_supine
       - dance
     key: [LB, B]
@@ -58,6 +92,8 @@ tasks:
     manual_transition:
       - passive
       - pd_stand
+      - pd_stand_x
+      - pd_stand_y
       - walk
     auto_transition: walk
     key: [RB, B]

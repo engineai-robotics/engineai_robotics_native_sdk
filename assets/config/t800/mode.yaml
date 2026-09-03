@@ -41,6 +41,10 @@ mode:
       scope: passive/default
     - tag: pd_stand
       scope: pd_stand/robot
+    - tag: pd_stand_x
+      scope: pd_stand/pose_x
+    - tag: pd_stand_y
+      scope: pd_stand/pose_y
     - tag: rl_walking_example
       scope: rl_walking_example/default
     - tag: ros2_bridge
@@ -79,6 +83,10 @@ mode:
       scope: passive/default
     - tag: pd_stand
       scope: pd_stand/default
+    - tag: pd_stand_x
+      scope: pd_stand/pose_x
+    - tag: pd_stand_y
+      scope: pd_stand/pose_y
     - tag: rl_walking_example
       scope: rl_walking_example/default
     - tag: ros2_bridge
