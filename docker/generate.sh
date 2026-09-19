@@ -12,7 +12,7 @@ USER_HOME="$HOME"
 # --- Config constants ---
 NVIDIA_GPU_AVAILABLE="n"
 WORKSPACE_DIR="${SCRIPT_DIR}/../"
-PROJECT_NAME="engineai_robotics_env"
+PROJECT_NAME="engineai_robotics_env_new"
 SOURCE_IMAGE="ghcr.io/engineai-robotics/engineai_robotics_env:latest"
 LOCAL_IMAGE_TAG="humble-desktop-local"
 

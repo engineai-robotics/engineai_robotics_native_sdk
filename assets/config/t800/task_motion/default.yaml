@@ -25,6 +25,7 @@ tasks:
       - pd_stand_x
       - pd_stand_y
       - supine_to_stance
+      - stand_up
     key: [LB, RB]
 
   - motion: pd_stand
@@ -39,7 +40,13 @@ tasks:
       - dance
       - pd_stand_x
       - pd_stand_y
-    key: [LB, A]
+      - left_front_kick
+      - victory
+      - rear_hook
+      - laugh
+      - rl_roundhouse_kick
+      - straight_punch_L
+    key: [LB, BACK]
 
   - motion: pd_stand_x
     period: 0.002
@@ -82,6 +89,13 @@ tasks:
       - pd_stand_y
       - stance_to_supine
       - dance
+      - left_front_kick
+      - victory
+      - rl_roundhouse_kick
+      - rear_hook
+      - laugh
+      - straight_punch_L
+      - rl_boxing_loco
     key: [LB, B]
 
   - motion: dance
@@ -99,13 +113,15 @@ tasks:
     key: [RB, B]
 
   - motion: supine_to_stance
-    period: 0.01
+    period: 0.02
     runner:
       - name: rl_mimic_trajectory_runner
         enabled: true
         param_tag: rl_supine_to_stance
     manual_transition:
       - passive
+      - stance_to_supine
+      - walk
     auto_transition: walk
     key: [START, CROSS_X_UP]
 
@@ -119,4 +135,128 @@ tasks:
       - passive
       - pd_stand
     auto_transition: passive
+    key: [START, Y]
+
+  #起立
+  - motion: stand_up
+    period: 0.02
+    runner:
+      - name: rl_mimic_trajectory_runner
+        enabled: true
+        param_tag: rl_stand_up
+    manual_transition:
+      - passive
+      - pd_stand
+      - walk
+    auto_transition: walk
     key: [START, CROSS_X_DOWN]
+
+    # 摆拳
+  - motion: rear_hook
+    period: 0.02
+    runner:
+      - name: rl_mimic_trajectory_runner
+        enabled: true
+        param_tag: rl_rear_hook
+    manual_transition:
+      - passive
+      - pd_stand
+      - walk
+    auto_transition: rl_boxing_loco
+    key: [CROSS_Y_LEFT, Y]
+
+  # #胜利动作
+  - motion: victory
+    period: 0.02
+    runner:
+      - name: rl_mimic_trajectory_runner
+        enabled: true
+        param_tag: rl_victory
+    manual_transition:
+      - passive
+      - pd_stand
+      - walk
+      - stance_to_supine
+    auto_transition: walk
+    key: [Y, B]
+
+  # #  # 嘲讽
+  - motion: laugh
+    period: 0.02
+    runner:
+      - name: rl_mimic_trajectory_runner
+        enabled: true
+        param_tag: rl_laugh
+    manual_transition:
+      - passive
+      - pd_stand
+      - walk
+      - stance_to_supine
+      - rl_boxing_loco
+    auto_transition: walk
+    key: [X, A]
+
+    # 回旋踢
+  - motion: rl_roundhouse_kick
+    period: 0.02
+    runner:
+      - name: rl_mimic_trajectory_runner
+        enabled: true
+        param_tag: rl_roundhouse_kick
+    manual_transition:
+      - passive
+      - pd_stand
+      - walk
+      - stance_to_supine
+    auto_transition: rl_boxing_loco
+    key: [CROSS_X_UP, B]
+
+    # 正蹬
+  - motion: left_front_kick
+    period: 0.02
+    runner:
+      - name: rl_mimic_trajectory_runner
+        enabled: true
+        param_tag: rl_left_front_kick
+    manual_transition:
+      - passive
+      - pd_stand
+      - walk
+    auto_transition: rl_boxing_loco
+    key: [CROSS_Y_LEFT, B]
+
+    # 左直拳
+  - motion: straight_punch_L
+    period: 0.02
+    runner:
+      - name: rl_mimic_trajectory_runner
+        enabled: true
+        param_tag: rl_straight_punch_L
+    manual_transition:
+      - passive
+      - pd_stand
+      - walk
+    auto_transition: rl_boxing_loco
+    key: [CROSS_Y_LEFT, X]
+
+  - motion: rl_boxing_loco
+    period: 0.01
+    runner:
+      - name: rl_walking_example_runner
+        enabled: true
+        param_tag: rl_boxing_loco
+    manual_transition:
+      - walk
+      - passive
+      - pd_stand
+      - pd_stand_x
+      - pd_stand_y
+      - stance_to_supine
+      - dance
+      - left_front_kick
+      - rl_roundhouse_kick
+      - rear_hook
+      - straight_punch_L
+      - laugh
+    auto_transition: walk
+    key: [LB, A]
