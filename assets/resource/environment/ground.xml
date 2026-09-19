@@ -1,29 +1,49 @@
-<mujoco model="ground">
+<mujoco model="ground_triangle_arena_flat_arch">
 
-  <statistic center="0 0 0.5" extent="1"/>
+<statistic center="0 0 0.5" extent="1"/>
 
-  <visual>
-    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
-    <rgba haze="0.15 0.25 0.35 1"/>
-    <global azimuth="150" elevation="-20"/>
-    <quality shadowsize="0"/>
-  </visual>
+<visual>
+<headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+<rgba haze="0.15 0.25 0.35 1"/>
+<global azimuth="150" elevation="-20"/>
+<quality shadowsize="0"/>
+</visual>
 
-  <visual>
-    <rgba com="1 0.84 0 0.5" contactforce="0.8 0.36 0.36 1" contactpoint="1.0 1.0 0.6 0.4"/>
-    <scale com="1" forcewidth="0.02" contactwidth="0.01" contactheight="0.02" framewidth="0.05" framelength="0.6"/>
-    <map force="0.01"/>
-  </visual>
+<visual>
+<rgba com="1 0.84 0 0.5" contactforce="0.8 0.36 0.36 1" contactpoint="1.0 1.0 0.6 0.4"/>
+<scale com="1" forcewidth="0.02" contactwidth="0.01" contactheight="0.02" framewidth="0.05" framelength="0.6"/>
+<map force="0.01"/>
+</visual>
 
-  <asset>
-    <!-- <texture name="skybox" type="skybox" builtin="gradient" rgb1="0.1 0.1 0.1" rgb2="0 0 0" width="1000" height="1000" mark="random" random="0.001" markrgb="1 1 1"/> -->
-    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="1000" height="1000"/>
-    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0"/>
-  </asset>
+<asset>
+<texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="1000" height="1000"/>
+<material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0"/>
+</asset>
 
-  <worldbody>
-    <light pos="0 0 10" dir="0 0 -1" directional="true"/>
-    <geom name="floor" size="0 5 0.125" type="plane" material="groundplane" conaffinity="7" condim="3" friction="1.0"/>
-  </worldbody>
+<worldbody>
+<light pos="0 0 10" dir="0 0 -1" directional="true"/>
+<geom name="floor" size="0 5 0.125" type="plane" material="groundplane" 
+      conaffinity="7" condim="3" 
+      friction="1.5 0.02 0.001" 
+      solref="0.01 0.2"
+      solimp="0.6 0.9 0.001"/>
+
+<!-- 真实比赛场地：等边三角形减速带赛道，每边4米
+     减速带用大半径圆柱体的顶部一小段模拟扁平弧形截面(更接近真实减速带外观，
+     不是完整半圆凸起)，露出高度=7cm，符合真实规格 -->
+<!-- <geom name="speed_bump_1" type="cylinder" size="0.2537 0.5000" pos="-0.2500 1.8764 -0.1837" quat="0.353553 0.353553 -0.612372 -0.612372" rgba="0.9 0.75 0.1 1" conaffinity="7" condim="3" friction="1.0"/>
+<geom name="speed_bump_2" type="cylinder" size="0.2537 0.5000" pos="-0.7500 1.0104 -0.1837" quat="0.353553 0.353553 -0.612372 -0.612372" rgba="0.9 0.75 0.1 1" conaffinity="7" condim="3" friction="1.0"/>
+<geom name="speed_bump_3" type="cylinder" size="0.2537 0.5000" pos="-1.2500 0.1443 -0.1837" quat="0.353553 0.353553 -0.612372 -0.612372" rgba="0.9 0.75 0.1 1" conaffinity="7" condim="3" friction="1.0"/>
+<geom name="speed_bump_4" type="cylinder" size="0.2537 0.5000" pos="-1.7500 -0.7217 -0.1837" quat="0.353553 0.353553 -0.612372 -0.612372" rgba="0.9 0.75 0.1 1" conaffinity="7" condim="3" friction="1.0"/>
+<geom name="speed_bump_5" type="cylinder" size="0.2537 0.5000" pos="-1.5000 -1.1547 -0.1837" quat="0.707107 0.707107 -0.000000 -0.000000" rgba="0.9 0.75 0.1 1" conaffinity="7" condim="3" friction="1.0"/>
+<geom name="speed_bump_6" type="cylinder" size="0.2537 0.5000" pos="-0.5000 -1.1547 -0.1837" quat="0.707107 0.707107 -0.000000 -0.000000" rgba="0.9 0.75 0.1 1" conaffinity="7" condim="3" friction="1.0"/>
+<geom name="speed_bump_7" type="cylinder" size="0.2537 0.5000" pos="0.5000 -1.1547 -0.1837" quat="0.707107 0.707107 -0.000000 -0.000000" rgba="0.9 0.75 0.1 1" conaffinity="7" condim="3" friction="1.0"/>
+<geom name="speed_bump_8" type="cylinder" size="0.2537 0.5000" pos="1.5000 -1.1547 -0.1837" quat="0.707107 0.707107 -0.000000 -0.000000" rgba="0.9 0.75 0.1 1" conaffinity="7" condim="3" friction="1.0"/>
+<geom name="speed_bump_9" type="cylinder" size="0.2537 0.5000" pos="1.7500 -0.7217 -0.1837" quat="0.353553 0.353553 0.612372 0.612372" rgba="0.9 0.75 0.1 1" conaffinity="7" condim="3" friction="1.0"/>
+<geom name="speed_bump_10" type="cylinder" size="0.2537 0.5000" pos="1.2500 0.1443 -0.1837" quat="0.353553 0.353553 0.612372 0.612372" rgba="0.9 0.75 0.1 1" conaffinity="7" condim="3" friction="1.0"/>
+<geom name="speed_bump_11" type="cylinder" size="0.2537 0.5000" pos="0.7500 1.0104 -0.1837" quat="0.353553 0.353553 0.612372 0.612372" rgba="0.9 0.75 0.1 1" conaffinity="7" condim="3" friction="1.0"/>
+<geom name="speed_bump_12" type="cylinder" size="0.2537 0.5000" pos="0.2500 1.8764 -0.1837" quat="0.353553 0.353553 0.612372 0.612372" rgba="0.9 0.75 0.1 1" conaffinity="7" condim="3" friction="1.0"/> -->
+
+</worldbody>
 
 </mujoco>

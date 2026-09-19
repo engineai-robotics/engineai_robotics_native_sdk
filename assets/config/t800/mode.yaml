@@ -55,6 +55,22 @@ mode:
       scope: rl_stance_to_supine/default
     - tag: rl_dance_example
       scope: rl_dance_example/default
+    - tag: rl_stand_up
+      scope: rl_stand_up/default
+    - tag: rl_left_front_kick
+      scope: rl_left_front_kick/default
+    - tag: rl_victory
+      scope: rl_victory/default
+    - tag: rl_rear_hook
+      scope: rl_rear_hook/default
+    - tag: rl_laugh
+      scope: rl_laugh/default
+    - tag: rl_roundhouse_kick
+      scope: rl_roundhouse_kick/default
+    - tag: rl_straight_punch_L
+      scope: rl_straight_punch_L/default
+    - tag: rl_boxing_loco
+      scope: rl_boxing_loco/default
       
   sim:
     - tag: resident_task
@@ -97,3 +113,19 @@ mode:
       scope: rl_stance_to_supine/default
     - tag: rl_dance_example
       scope: rl_dance_example/default
+    - tag: rl_stand_up
+      scope: rl_stand_up/default
+    - tag: rl_left_front_kick
+      scope: rl_left_front_kick/default
+    - tag: rl_victory
+      scope: rl_victory/default
+    - tag: rl_rear_hook
+      scope: rl_rear_hook/default
+    - tag: rl_laugh
+      scope: rl_laugh/default
+    - tag: rl_roundhouse_kick
+      scope: rl_roundhouse_kick/default  
+    - tag: rl_straight_punch_L
+      scope: rl_straight_punch_L/default
+    - tag: rl_boxing_loco
+      scope: rl_boxing_loco/default
