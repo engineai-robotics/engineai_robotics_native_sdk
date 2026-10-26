@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+if [ "$(id -u)" != "0" ]; then
+    echo "This script must be run as root." >&2
+    exit 1
+fi
+
+# 删除旧位置的服务文件（不停止服务）
+if [ -f "/etc/systemd/system/robotics.service" ]; then
+    echo "Removing old service file from /etc/systemd/system/..."
+    rm -f "/etc/systemd/system/robotics.service"
+fi
+
+# 清理可能存在的旧符号链接
+if [ -L "/etc/systemd/system/multi-user.target.wants/robotics.service" ]; then
+    echo "Removing old service symlink..."
+    rm -f "/etc/systemd/system/multi-user.target.wants/robotics.service"
+fi
+
+echo "Old service files cleanup completed."
+
+echo "Preparing to install."

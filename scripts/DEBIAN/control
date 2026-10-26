@@ -1,0 +1,8 @@
+Package: robotics-engineai
+Version: 0.0.0
+Architecture: amd64
+Section: apps
+Depends:
+Description: This is a robot engine pacakge.
+Priority: optional
+Maintainer: eason <lianyq@engineai.com.cn>

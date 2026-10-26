@@ -1,0 +1,17 @@
+[Unit]
+Description=Engineering AI Robotics Service
+After=ethercat.target
+After=network-online.target
+Requires=network-online.target
+RequiresMountsFor=/apps/engineai_robotics
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/apps/engineai_robotics
+ExecStart=/bin/bash /apps/engineai_robotics/run_robot.sh pm_v2
+Restart=always
+RestartSec=10
+#RestartSec=1
+
+[Install]
+WantedBy=multi-user.target

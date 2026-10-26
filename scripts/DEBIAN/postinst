@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -e
+
+if [ "$(id -u)" != "0" ]; then
+    echo "This script must be run as root." >&2
+    exit 1
+fi
+
+# 等待文件系统同步，确保所有文件都已安装
+sync
+
+# 检查systemd服务文件是否存在
+if [ ! -f "/lib/systemd/system/robotics.service" ]; then
+    echo "Error: robotics.service not found at /lib/systemd/system/robotics.service"
+    echo "This indicates a problem with the package installation."
+    exit 1
+fi
+
+echo "Found robotics.service file, proceeding with service configuration update..."
+
+# 重新加载systemd配置
+systemctl daemon-reload
+
+# 启用robotics服务（如果尚未启用）
+echo "Enabling robotics service..."
+systemctl enable robotics.service
+
+echo "Service configuration updated successfully."
+echo "Note: Service is not automatically started. Use 'sudo systemctl start robotics.service' to start manually if needed."
