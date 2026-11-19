@@ -40,3 +40,6 @@ _build
 .cache
 build
 .vscode
+
+# Package
+*.deb
